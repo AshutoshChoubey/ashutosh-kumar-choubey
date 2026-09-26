@@ -53,6 +53,7 @@ export interface SkillsContent {
 export interface ExperienceSubProject {
   client?: string;
   project?: string;
+  technologies?: string[];
   bullets: string[];
 }
 
@@ -85,6 +86,7 @@ export interface ContentCreationItem {
   url?: string;
   period: string;
   description?: string;
+  technologies?: string[];
   bullets: string[];
 }
 
@@ -137,7 +139,7 @@ export interface ProfileSection<T = SectionContent> {
 }
 
 /**
- * Clean, minimalist ATS-friendly resume data for Frontend Developer specializing in Angular & TypeScript.
+ * Colorful & professional ATS-friendly resume data for Frontend Developer specializing in Angular & TypeScript.
  * No references to React or AI.
  */
 export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
@@ -177,7 +179,7 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
       categories: [
         {
           name: 'Frontend Frameworks & State',
-          tags: 'Angular (v14–19), TypeScript, RxJS, NgRx, Signals, Standalone Components, Angular Material, Reactive Forms'
+          tags: 'Angular (v14–19), TypeScript, RxJS, NgRx, Angular Signals, Standalone Components, Angular Material, Reactive Forms'
         },
         {
           name: 'Languages & Web Standards',
@@ -214,10 +216,12 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
           current: true,
           role: 'Senior Software Engineer & Frontend Lead',
           roleProjectText: 'Senior Software Engineer & Frontend Lead',
+          technologies: ['Angular 19', 'TypeScript', 'RxJS', 'NgRx', 'Micro-frontends', 'Jasmine', 'Docker'],
           subProjects: [
             {
               client: 'Google LLC',
               project: 'Google DevShop',
+              technologies: ['Angular 19', 'TypeScript', 'RxJS', 'NgRx', 'Jasmine', 'Karma', 'CI/CD'],
               bullets: [
                 'Architect enterprise frontend solutions utilizing Angular 18/19 and TypeScript, designing reactive workflows with RxJS and NgRx state management.',
                 'Lead and mentor a team of frontend engineers on clean architectural patterns, TypeScript best practices, and performance profiling.',
@@ -228,6 +232,7 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
             {
               client: 'Ericsson Inc',
               project: 'BSS BAM',
+              technologies: ['Angular 16', 'TypeScript', 'Micro-frontends', 'Docker', 'Kubernetes', 'Helm'],
               bullets: [
                 'Architected Fault Management Systems and Network Topology visualization tools from the ground up using Angular 14–16 and TypeScript.',
                 'Designed and decoupled 2 micro-frontend modules within a distributed microservices ecosystem to facilitate independent squad deployments.',
@@ -246,6 +251,7 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
           current: false,
           role: 'Senior Frontend Developer',
           roleProjectText: 'Senior Frontend Developer | Enterprise CRM Platform',
+          technologies: ['Angular 10', 'TypeScript', 'Node.js', 'REST APIs', 'Agile'],
           bullets: [
             'Refactored legacy monolith modules into maintainable, high-throughput Angular and TypeScript applications.',
             'Delivered 12 consecutive enterprise milestone releases ahead of schedule through precise requirement refinement and sprint ownership.',
@@ -261,6 +267,7 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
           current: false,
           role: 'Angular Developer',
           roleProjectText: 'Angular Developer | Client: Insight Retail Software Inc',
+          technologies: ['Angular 7', 'TypeScript', 'POS Systems', 'Responsive UI'],
           bullets: [
             'Built responsive cross-platform retail POS single-page applications using Angular and TypeScript.',
             'Designed 15+ reusable UI components with responsive touch interactions optimized for diverse tablet and POS hardware form factors.'
@@ -275,6 +282,7 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
           current: false,
           role: 'Software Developer',
           roleProjectText: 'Software Developer | Warehouse Stock Management System',
+          technologies: ['Angular 7', 'TypeScript', 'Inventory Architecture'],
           bullets: [
             'Led a 5-developer engineering team delivering an Angular and TypeScript warehouse inventory tracking system with 90%+ on-time milestone delivery.',
             'Digitized manual inventory counting workflows, eliminating paper-based reporting delays and stock discrepancy rates.'
@@ -289,6 +297,7 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
           current: false,
           role: 'Application Developer',
           roleProjectText: 'Application Developer | Telemedicine Platform',
+          technologies: ['Angular 5', 'TypeScript', 'SCSS', 'HTML5'],
           bullets: [
             'Engineered responsive telemedicine consultation portals using Angular and TypeScript for Karma Healthcare, decreasing user-reported onboarding issues by 25%.',
             'Implemented accessible, cross-browser web interfaces with HTML5, CSS3/SCSS, and modern JavaScript adhering to strict frontend compliance standards.'
@@ -312,6 +321,7 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
           url: 'https://me.worldgyan.com',
           period: '2020 – Present',
           description: 'Producing educational technical content and architectural deep-dives for the global frontend developer community.',
+          technologies: ['Angular Signals', 'Standalone Architecture', 'RxJS', 'TypeScript', 'Video Production'],
           bullets: [
             'Produce detailed video tutorials and architectural guides covering modern Angular features (Signals, Standalone Architecture, RxJS state management, and performance tuning).',
             'Create hands-on code walkthroughs and open-source GitHub starter repositories referenced by thousands of frontend developers.',

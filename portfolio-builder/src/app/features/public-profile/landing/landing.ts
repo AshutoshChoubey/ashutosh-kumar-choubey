@@ -89,6 +89,29 @@ export class Landing {
     (this.certificationsSection()?.content as CertificationsContent) || { items: [] }
   );
 
+  /**
+   * Transforms comma-delimited strings or string arrays into individual tag arrays.
+   */
+  splitTags(tags: string | string[] | undefined): string[] {
+    if (!tags) return [];
+    if (Array.isArray(tags)) return tags;
+    return tags.split(',').map((t) => t.trim()).filter(Boolean);
+  }
+
+  /**
+   * Assigns colorful theme class per skill category.
+   */
+  getCategoryTheme(index: number): string {
+    const themes = [
+      'tag-theme-blue',
+      'tag-theme-emerald',
+      'tag-theme-purple',
+      'tag-theme-amber',
+      'tag-theme-cyan'
+    ];
+    return themes[index % themes.length];
+  }
+
   logout(): void {
     this.authService.logout();
   }
