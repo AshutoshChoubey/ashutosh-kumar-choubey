@@ -324,3 +324,4 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
     } as CertificationsContent
   }
 ];
+
