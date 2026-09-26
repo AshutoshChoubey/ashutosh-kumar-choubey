@@ -83,30 +83,38 @@ export class ProfileStateService {
             (s.content as any)?.fullName?.includes('Vance'))
       );
 
-    const hasReactOrAi =
+    const hasReactOrPlaceholder =
       saved &&
       Array.isArray(saved) &&
       saved.some((s) => {
         const text = JSON.stringify(s).toLowerCase();
         return (
           text.includes('react') ||
-          text.includes('artificial intelligence') ||
           text.includes('copilot') ||
-          text.includes('gemini') ||
-          text.includes('certified ai')
+          text.includes('gemini')
         );
       });
 
     const hasContentSection =
       saved && Array.isArray(saved) && saved.some((s) => s.type === 'content');
 
+    const hasCertLinks =
+      saved &&
+      Array.isArray(saved) &&
+      saved.some(
+        (s) =>
+          s.type === 'certifications' &&
+          (s.content as any)?.items?.some((c: any) => c.url?.includes('credly'))
+      );
+
     if (
       saved &&
       Array.isArray(saved) &&
       saved.length > 0 &&
       !isOldPlaceholder &&
-      !hasReactOrAi &&
-      hasContentSection
+      !hasReactOrPlaceholder &&
+      hasContentSection &&
+      hasCertLinks
     ) {
       this._sections.set(saved);
     } else {

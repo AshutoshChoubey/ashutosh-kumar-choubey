@@ -413,17 +413,46 @@
       <section class="resume-section">
         <div class="section-title-wrap">
           <span class="section-accent-bar bar-emerald"></span>
-          <h2 class="section-title">Certifications</h2>
+          <h2 class="section-title">Certifications & Credentials</h2>
         </div>
         <div class="cert-grid">
           @for (cert of certificationsContent().items; track cert.id) {
-            <div class="cert-card">
-              <span class="cert-icon">📜</span>
-              <div class="cert-info">
-                <div class="cert-title">{{ cert.title }}</div>
-                <div class="cert-issuer">{{ cert.issuer }} &bull; {{ cert.year }}</div>
+            <article class="cert-card">
+              <div class="cert-header-row">
+                <div class="cert-title-wrap">
+                  <span class="cert-badge-icon">🏅</span>
+                  @if (cert.url) {
+                    <a [href]="cert.url" target="_blank" rel="noopener noreferrer" class="cert-title cert-title-link">
+                      <span>{{ cert.title }}</span>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                    </a>
+                  } @else {
+                    <span class="cert-title">{{ cert.title }}</span>
+                  }
+                </div>
+                <span class="date-badge-pill">{{ cert.year }}</span>
               </div>
-            </div>
+
+              <div class="cert-meta-row">
+                <span class="cert-issuer-badge" [class]="getIssuerBadgeClass(cert.issuer)">
+                  {{ cert.issuer }}
+                </span>
+
+                @if (cert.credentialId) {
+                  <span class="cert-id-tag">ID: {{ cert.credentialId }}</span>
+                }
+
+                @if (cert.url) {
+                  <a [href]="cert.url" target="_blank" rel="noopener noreferrer" class="cert-verify-link">
+                    Verify Credential ↗
+                  </a>
+                }
+              </div>
+            </article>
           }
         </div>
       </section>

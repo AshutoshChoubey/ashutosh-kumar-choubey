@@ -112,6 +112,17 @@ export class Landing {
     return themes[index % themes.length];
   }
 
+  /**
+   * Returns a branded issuer badge class.
+   */
+  getIssuerBadgeClass(issuer: string): string {
+    const lower = issuer?.toLowerCase() || '';
+    if (lower.includes('amazon') || lower.includes('aws')) return 'badge-aws';
+    if (lower.includes('udemy')) return 'badge-udemy';
+    if (lower.includes('global')) return 'badge-globallogic';
+    return 'badge-default';
+  }
+
   logout(): void {
     this.authService.logout();
   }

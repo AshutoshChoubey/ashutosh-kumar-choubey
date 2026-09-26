@@ -111,6 +111,8 @@ export interface CertificationItem {
   title: string;
   issuer: string;
   year: string;
+  url?: string;
+  credentialId?: string;
 }
 
 export interface CertificationsContent {
@@ -359,13 +361,25 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
           id: 'cert-1',
           title: 'AWS Certified Solutions Architect – Associate',
           issuer: 'Amazon Web Services',
-          year: '2025'
+          year: '2025',
+          url: 'https://www.credly.com/badges/c3bfe5db-65ef-418c-a0a2-237a7fabefae',
+          credentialId: 'c3bfe5db-65ef-418c-a0a2-237a7fabefae'
         },
         {
           id: 'cert-2',
-          title: 'Angular – The Complete Guide',
+          title: 'Angular – The Complete Guide (2021 Edition)',
           issuer: 'Udemy',
-          year: '2021'
+          year: '2021',
+          url: 'https://www.udemy.com/certificate/UC-2b57992f-aff5-42c1-88c7-c9e9da0497fb/',
+          credentialId: 'UC-2b57992f-aff5-42c1-88c7-c9e9da0497fb'
+        },
+        {
+          id: 'cert-3',
+          title: 'Certified AI Professional',
+          issuer: 'GlobalLogic',
+          year: '2026',
+          url: 'https://glx.globallogic.com/certify/6c3d6223-d349-4ea6-828e-a4dee7fc6a65',
+          credentialId: '6c3d6223-d349-4ea6-828e-a4dee7fc6a65'
         }
       ]
     } as CertificationsContent
