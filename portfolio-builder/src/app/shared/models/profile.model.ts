@@ -3,6 +3,7 @@ export type SectionType =
   | 'about'
   | 'skills'
   | 'experience'
+  | 'content'
   | 'education'
   | 'certifications';
 
@@ -12,6 +13,7 @@ export interface HeroContent {
   phone?: string;
   email?: string;
   linkedinUrl?: string;
+  githubUrl?: string;
   websiteUrl?: string;
   location?: string;
   bio?: string;
@@ -75,6 +77,21 @@ export interface ExperienceContent {
   items: ExperienceItem[];
 }
 
+export interface ContentCreationItem {
+  id: string;
+  title: string;
+  channelOrPlatform: string;
+  role: string;
+  url?: string;
+  period: string;
+  description?: string;
+  bullets: string[];
+}
+
+export interface ContentCreationContent {
+  items: ContentCreationItem[];
+}
+
 export interface EducationItem {
   id: string;
   institution: string;
@@ -103,6 +120,7 @@ export type SectionContent =
   | AboutContent
   | SkillsContent
   | ExperienceContent
+  | ContentCreationContent
   | EducationContent
   | CertificationsContent
   | Record<string, any>;
@@ -119,7 +137,8 @@ export interface ProfileSection<T = SectionContent> {
 }
 
 /**
- * Exact portfolio resume data matching user's executive design.
+ * Clean, minimalist ATS-friendly resume data for Frontend Developer specializing in Angular & TypeScript.
+ * No references to React or AI.
  */
 export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
   {
@@ -129,13 +148,14 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
     displayOrder: 1,
     content: {
       fullName: 'Ashutosh Kumar Choubey',
-      tagline: 'Senior Software Developer | Angular & Frontend Lead (React, Angular, AI)',
+      tagline: 'Lead Frontend Developer | Angular & TypeScript Specialist',
       phone: '+91 9658476170',
       email: 'ashutoshkumarchoubey@gmail.com',
       linkedinUrl: 'https://linkedin.com/in/ashutosh-kumar-choubey',
+      githubUrl: 'https://github.com/AshutoshChoubey',
       websiteUrl: 'https://me.worldgyan.com',
-      location: 'India',
-      bio: 'Senior Software Developer & Frontend Lead with 9+ years of experience architecting scalable enterprise systems and leading frontend development teams.'
+      location: 'Noida / Bangalore, India',
+      bio: 'Senior Frontend Developer & Angular Specialist with 9+ years of experience architecting high-performance enterprise web applications and leading frontend engineering teams.'
     } as HeroContent
   },
   {
@@ -145,41 +165,35 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
     displayOrder: 2,
     content: {
       summary:
-        'Senior Software Developer & Frontend Lead with 9+ years of experience architecting scalable enterprise systems and leading frontend development teams. Deep expertise across Angular (v5–21), React, TypeScript, NgRx, and RxJS. Certified in AWS and Artificial Intelligence, with extensive experience integrating modern AI-assisted workflows (GitHub Copilot, Google Gemini, LLMs) to accelerate delivery. Proven history of elevating unit test coverage up to 95%, establishing code quality frameworks, and delivering high-impact micro-frontend solutions for clients including Google LLC and Ericsson.'
+        'Lead Frontend Developer with 9+ years of professional experience architecting robust, scalable enterprise web systems and leading frontend engineering squads. Deep specialization in modern Angular (v14–19, Standalone Components, Signals), TypeScript, RxJS, and NgRx state management. Proven track record of designing modular micro-frontend architectures, engineering reusable component design systems, elevating automated unit test coverage to 95%, and optimizing Core Web Vitals across mission-critical enterprise applications.'
     } as AboutContent
   },
   {
     id: 'sec-skills-3',
     type: 'skills',
-    title: 'Technical Skills',
+    title: 'Core Tech Stack',
     displayOrder: 3,
     content: {
       categories: [
         {
-          name: 'Frontend Technologies',
-          tags: 'Angular (5–21), React, TypeScript, JavaScript (ES6+), HTML5, CSS3, SCSS, RxJS, NgRx, Redux'
+          name: 'Frontend Frameworks & State',
+          tags: 'Angular (v14–19), TypeScript, RxJS, NgRx, Signals, Standalone Components, Angular Material, Reactive Forms'
         },
         {
-          name: 'AI & Modern Dev Tools',
-          tags: 'AI-assisted development (GitHub Copilot, Google Gemini, Claude), LLM Integration, Prompt Engineering',
-          badge: 'Certified AI Pro'
+          name: 'Languages & Web Standards',
+          tags: 'TypeScript (Strict Mode), JavaScript (ES6+), HTML5, CSS3, SCSS/SASS, Responsive Web Design'
         },
         {
-          name: 'Testing & Quality',
-          tags: 'Karma, Jasmine, Jest, Unit & Integration Testing, Robot Framework, Test Automation'
+          name: 'Architecture & Performance',
+          tags: 'Micro-frontends, Component-Driven Architecture, Lazy Loading, SSR, Web Performance, Core Web Vitals, RESTful API Integration'
         },
         {
-          name: 'Backend Integration',
-          tags: 'Node.js, Express.js, RESTful APIs, JSON, HTTP/HTTPS Protocols, WebSocket'
+          name: 'Testing & Code Quality',
+          tags: 'Karma, Jasmine, Jest, Unit & Integration Testing, Code Reviews, Clean Code Architecture, CI/CD Quality Gates'
         },
         {
-          name: 'Cloud & DevOps',
-          tags: 'AWS, Docker, Kubernetes, Helm Charts, CI/CD Pipelines',
-          badge: 'Solutions Architect'
-        },
-        {
-          name: 'Architecture & Leadership',
-          tags: 'Micro-frontends, Component-driven Architecture, Mentorship, Sprint Planning, Agile/Scrum'
+          name: 'Build, Tools & DevOps',
+          tags: 'Webpack, Vite, Angular CLI, Git, GitHub Actions, npm, Docker, AWS (Solutions Architect Associate)'
         }
       ]
     } as SkillsContent
@@ -194,6 +208,7 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
         {
           id: 'exp-1',
           company: 'GlobalLogic India Pvt. Ltd.',
+          location: 'Noida, India',
           startDate: 'Jan 2022',
           endDate: 'Present',
           current: true,
@@ -204,20 +219,20 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
               client: 'Google LLC',
               project: 'Google DevShop',
               bullets: [
-                'Architected enterprise frontend solutions utilizing Angular 18, 19, 20, 21, designing high-performance reactive workflows with RxJS and NgRx state management.',
-                'Mentored and coached junior/mid-level engineers on clean architecture, performance profiling, and modern JavaScript standards.',
-                'Resolved complex production bugs across two mission-critical Google platforms, increasing automated unit test coverage from 45% to 95%.',
-                'Enforced rigorous code review standards and CI validation gates, significantly decreasing post-deployment defect rates.'
+                'Architect enterprise frontend solutions utilizing Angular 18/19 and TypeScript, designing reactive workflows with RxJS and NgRx state management.',
+                'Lead and mentor a team of frontend engineers on clean architectural patterns, TypeScript best practices, and performance profiling.',
+                'Resolve complex production issues across mission-critical enterprise platforms, driving automated test coverage from 45% to 95% using Jasmine and Karma.',
+                'Establish rigorous code review standards and CI/CD validation gates to eliminate regression bugs and ensure high release velocity.'
               ]
             },
             {
               client: 'Ericsson Inc',
               project: 'BSS BAM',
               bullets: [
-                'Architected Fault Management Systems and Network Topology visualization tools from scratch using Angular 13–16.',
-                'Designed and decoupled 2 micro-frontend modules within a distributed microservices ecosystem.',
-                'Authored 5 shared GUI component libraries in Angular, boosting code reusability across global squads.',
-                'Configured build and deployment manifests with Bob, Kubernetes, and Helm charts to shorten release cycles.'
+                'Architected Fault Management Systems and Network Topology visualization tools from the ground up using Angular 14–16 and TypeScript.',
+                'Designed and decoupled 2 micro-frontend modules within a distributed microservices ecosystem to facilitate independent squad deployments.',
+                'Engineered 5 shared UI component libraries in Angular, significantly accelerating feature development across global engineering squads.',
+                'Streamlined build configurations and deployment manifests with Docker and Kubernetes to reduce pipeline turnaround times.'
               ]
             }
           ]
@@ -225,81 +240,109 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
         {
           id: 'exp-2',
           company: 'CodeClouds IT Solution Pvt. Ltd.',
+          location: 'Kolkata, India',
           startDate: 'Sep 2019',
           endDate: 'Dec 2021',
           current: false,
-          role: 'Senior Web Developer',
-          roleProjectText: 'Senior Web Developer | E-commerce to CRM Platform',
+          role: 'Senior Frontend Developer',
+          roleProjectText: 'Senior Frontend Developer | Enterprise CRM Platform',
           bullets: [
-            'Refactored legacy monolith modules using Angular 10 and Node.js into a maintainable, high-throughput enterprise platform.',
-            'Shipped 12 major milestone releases ahead of schedule through agile requirement refinement and sprint ownership.',
-            'Architected seamless data pipeline integrations linking multi-channel e-commerce stores to internal CRM databases.'
+            'Refactored legacy monolith modules into maintainable, high-throughput Angular and TypeScript applications.',
+            'Delivered 12 consecutive enterprise milestone releases ahead of schedule through precise requirement refinement and sprint ownership.',
+            'Engineered optimized data integration layers connecting multi-channel customer data to internal CRM backends via RESTful APIs.'
           ]
         },
         {
           id: 'exp-3',
           company: 'Navigators Software Pvt. Ltd.',
+          location: 'Kolkata, India',
           startDate: 'May 2019',
           endDate: 'Sep 2019',
           current: false,
           role: 'Angular Developer',
-          roleProjectText: 'Angular Developer | Client: Insight Retail Software Inc (Retail POS)',
+          roleProjectText: 'Angular Developer | Client: Insight Retail Software Inc',
           bullets: [
-            'Engineered cross-platform single-page retail POS solutions using Angular 7 and Node.js.',
-            'Optimized 15+ complex responsive UI components to ensure seamless touch interfaces across tablets and point-of-sale hardware.'
+            'Built responsive cross-platform retail POS single-page applications using Angular and TypeScript.',
+            'Designed 15+ reusable UI components with responsive touch interactions optimized for diverse tablet and POS hardware form factors.'
           ]
         },
         {
           id: 'exp-4',
           company: 'Phoenix Software Solutions',
+          location: 'Bhubaneswar, India',
           startDate: 'Oct 2018',
           endDate: 'May 2019',
           current: false,
-          role: 'Senior Software Developer',
-          roleProjectText: 'Senior Software Developer | Client: B.C. Mohanty and Sons (Stock Management)',
+          role: 'Software Developer',
+          roleProjectText: 'Software Developer | Warehouse Stock Management System',
           bullets: [
-            'Led a 5-developer engineering team delivering Angular 7 / Node.js warehouse inventory tracking systems with 90% on-time accuracy.',
-            'Eliminated paper-based manual inventory workflows, reducing warehouse processing delays and inventory count discrepancies.'
+            'Led a 5-developer engineering team delivering an Angular and TypeScript warehouse inventory tracking system with 90%+ on-time milestone delivery.',
+            'Digitized manual inventory counting workflows, eliminating paper-based reporting delays and stock discrepancy rates.'
           ]
         },
         {
           id: 'exp-5',
-          company: 'NetTantra Technology Pvt. Ltd. & NTCS',
+          company: 'NetTantra Technology Pvt. Ltd.',
+          location: 'Bhubaneswar, India',
           startDate: 'May 2017',
           endDate: 'Oct 2018',
           current: false,
-          role: 'Application Developer & Software Engineer',
-          roleProjectText: 'Application Developer & Software Engineer',
+          role: 'Application Developer',
+          roleProjectText: 'Application Developer | Telemedicine Platform',
           bullets: [
-            'Engineered telemedicine consultation portals (Angular 5 / Node.js) for Karma Healthcare, reducing support inquiries by 25%.',
-            'Built cross-browser web interfaces with HTML5, CSS3, and JavaScript adhering to strict frontend compliance guidelines.'
+            'Engineered responsive telemedicine consultation portals using Angular and TypeScript for Karma Healthcare, decreasing user-reported onboarding issues by 25%.',
+            'Implemented accessible, cross-browser web interfaces with HTML5, CSS3/SCSS, and modern JavaScript adhering to strict frontend compliance standards.'
           ]
         }
       ]
     } as ExperienceContent
   },
   {
-    id: 'sec-edu-5',
+    id: 'sec-content-5',
+    type: 'content',
+    title: 'YouTube & Content Creation',
+    displayOrder: 5,
+    content: {
+      items: [
+        {
+          id: 'content-1',
+          title: 'Angular & TypeScript Deep Dives',
+          channelOrPlatform: 'YouTube & WorldGyan (me.worldgyan.com)',
+          role: 'Technical Creator & Educator',
+          url: 'https://me.worldgyan.com',
+          period: '2020 – Present',
+          description: 'Producing educational technical content and architectural deep-dives for the global frontend developer community.',
+          bullets: [
+            'Produce detailed video tutorials and architectural guides covering modern Angular features (Signals, Standalone Architecture, RxJS state management, and performance tuning).',
+            'Create hands-on code walkthroughs and open-source GitHub starter repositories referenced by thousands of frontend developers.',
+            'Conduct community code-review sessions and technical interview preparation workshops focused on enterprise TypeScript and Angular architecture.'
+          ]
+        }
+      ]
+    } as ContentCreationContent
+  },
+  {
+    id: 'sec-edu-6',
     type: 'education',
     title: 'Education',
-    displayOrder: 5,
+    displayOrder: 6,
     content: {
       items: [
         {
           id: 'edu-1',
           institution: 'National Institute of Science and Technology (NIST)',
-          degree: 'B.Tech – Electrical and Electronics Engineering',
-          location: 'Berhampur, Odisha',
+          degree: 'Bachelor of Technology (B.Tech) – Electrical & Electronics Engineering',
+          location: 'Berhampur, Odisha, India',
           period: '2013 – 2017'
         }
       ]
     } as EducationContent
   },
   {
-    id: 'sec-cert-6',
+    id: 'sec-cert-7',
     type: 'certifications',
     title: 'Certifications',
-    displayOrder: 6,
+    displayOrder: 7,
     content: {
       items: [
         {
@@ -310,12 +353,6 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
         },
         {
           id: 'cert-2',
-          title: 'Certified AI Professional',
-          issuer: 'GlobalLogic',
-          year: '2026'
-        },
-        {
-          id: 'cert-3',
           title: 'Angular – The Complete Guide',
           issuer: 'Udemy',
           year: '2021'
@@ -324,4 +361,3 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
     } as CertificationsContent
   }
 ];
-

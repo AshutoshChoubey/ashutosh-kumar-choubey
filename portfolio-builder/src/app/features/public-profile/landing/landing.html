@@ -3,7 +3,7 @@
   <div class="topbar-inner">
     <div class="brand-badge">
       <span class="pulse-indicator"></span>
-      <span class="brand-label">Resume Preview</span>
+      <span class="brand-label">ATS Resume View</span>
     </div>
 
     <div class="topbar-actions">
@@ -42,192 +42,258 @@
   </div>
 </nav>
 
-<!-- Main Resume Paper Document -->
-<div class="page-container">
-  <main class="page">
-    <!-- Header -->
-    <header>
-      <div class="name-role">
-        <h1>{{ heroContent().fullName || 'Ashutosh Kumar Choubey' }}</h1>
-        <div class="role-title">
-          {{ heroContent().tagline || 'Senior Software Developer | Angular & Frontend Lead (React, Angular, AI)' }}
-        </div>
+<!-- Main ATS-Friendly Single-Column Resume Document -->
+<div class="resume-wrapper">
+  <main class="resume-page" role="document">
+    <!-- Header / Contact Information -->
+    <header class="resume-header">
+      <h1 class="candidate-name">{{ heroContent().fullName || 'Ashutosh Kumar Choubey' }}</h1>
+      <div class="candidate-role">
+        {{ heroContent().tagline || 'Lead Frontend Developer | Angular & TypeScript Specialist' }}
       </div>
-      <div class="contact-bar">
+
+      <div class="contact-line">
         @if (heroContent().phone) {
-          <div class="contact-item">
-            <span>📞</span>
+          <span class="contact-item">
+            <span class="contact-icon">📞</span>
             <span>{{ heroContent().phone }}</span>
-          </div>
+          </span>
+          <span class="separator">•</span>
         }
+
         @if (heroContent().email) {
-          <div class="contact-item">
-            <span>✉️</span>
+          <span class="contact-item">
+            <span class="contact-icon">✉️</span>
             <a [href]="'mailto:' + heroContent().email">{{ heroContent().email }}</a>
-          </div>
+          </span>
+          <span class="separator">•</span>
         }
+
         @if (heroContent().linkedinUrl) {
-          <div class="contact-item">
-            <span>🔗</span>
+          <span class="contact-item">
+            <span class="contact-icon">🔗</span>
             <a [href]="heroContent().linkedinUrl" target="_blank" rel="noopener noreferrer">
               linkedin.com/in/ashutosh-kumar-choubey
             </a>
-          </div>
+          </span>
+          <span class="separator">•</span>
         }
+
+        @if (heroContent().githubUrl) {
+          <span class="contact-item">
+            <span class="contact-icon">💻</span>
+            <a [href]="heroContent().githubUrl" target="_blank" rel="noopener noreferrer">
+              github.com/AshutoshChoubey
+            </a>
+          </span>
+          <span class="separator">•</span>
+        }
+
         @if (heroContent().websiteUrl) {
-          <div class="contact-item">
-            <span>🌐</span>
+          <span class="contact-item">
+            <span class="contact-icon">🌐</span>
             <a [href]="heroContent().websiteUrl" target="_blank" rel="noopener noreferrer">
               me.worldgyan.com
             </a>
-          </div>
+          </span>
+          <span class="separator">•</span>
         }
+
+        <span class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span>{{ heroContent().location || 'Noida / Bangalore, India' }}</span>
+        </span>
       </div>
     </header>
 
     <!-- Professional Summary -->
-    <section>
+    <section class="resume-section">
       <h2 class="section-title">{{ aboutSection()?.title || 'Professional Summary' }}</h2>
-      <p class="summary-text">
-        Senior Software Developer & Frontend Lead with <strong>9+ years of experience</strong> architecting scalable enterprise systems and leading frontend development teams. Deep expertise across <strong>Angular (v5–21), React, TypeScript, NgRx, and RxJS</strong>. Certified in AWS and Artificial Intelligence, with extensive experience integrating modern AI-assisted workflows (GitHub Copilot, Google Gemini, LLMs) to accelerate delivery. Proven history of elevating unit test coverage up to 95%, establishing code quality frameworks, and delivering high-impact micro-frontend solutions for clients including Google LLC and Ericsson.
+      <p class="section-paragraph">
+        {{ aboutContent().summary || 'Lead Frontend Developer with 9+ years of professional experience architecting robust, scalable enterprise web systems and leading frontend engineering squads. Deep specialization in modern Angular (v14–19, Standalone Components, Signals), TypeScript, RxJS, and NgRx state management. Proven track record of designing modular micro-frontend architectures, engineering reusable component design systems, elevating automated unit test coverage to 95%, and optimizing Core Web Vitals across mission-critical enterprise applications.' }}
       </p>
     </section>
 
-    <!-- Technical Skills -->
-    <section>
-      <h2 class="section-title">{{ skillsSection()?.title || 'Technical Skills' }}</h2>
-      <div class="skills-grid">
+    <!-- Core Tech Stack -->
+    <section class="resume-section">
+      <h2 class="section-title">{{ skillsSection()?.title || 'Core Tech Stack' }}</h2>
+      <div class="skills-single-column">
         @if (skillsContent().categories && skillsContent().categories!.length > 0) {
           @for (cat of skillsContent().categories; track cat.name) {
-            <div class="skill-category">
-              <span class="skill-name">{{ cat.name }}</span>
-              <span class="skill-tags">
-                {{ cat.tags }}
-                @if (cat.badge) {
-                  <span class="badge">{{ cat.badge }}</span>
-                }
-              </span>
+            <div class="skill-row">
+              <span class="skill-category-label">{{ cat.name }}:</span>
+              <span class="skill-items">{{ cat.tags }}</span>
             </div>
           }
         } @else {
-          <div class="skill-category">
-            <span class="skill-name">Frontend Technologies</span>
-            <span class="skill-tags">Angular (5–21), React, TypeScript, JavaScript (ES6+), HTML5, CSS3, SCSS, RxJS, NgRx, Redux</span>
+          <div class="skill-row">
+            <span class="skill-category-label">Frontend Frameworks & State:</span>
+            <span class="skill-items">Angular (v14–19), TypeScript, RxJS, NgRx, Signals, Standalone Components, Angular Material, Reactive Forms</span>
           </div>
-          <div class="skill-category">
-            <span class="skill-name">AI & Modern Dev Tools</span>
-            <span class="skill-tags">AI-assisted development (GitHub Copilot, Google Gemini, Claude), LLM Integration, Prompt Engineering <span class="badge">Certified AI Pro</span></span>
+          <div class="skill-row">
+            <span class="skill-category-label">Languages & Web Standards:</span>
+            <span class="skill-items">TypeScript (Strict Mode), JavaScript (ES6+), HTML5, CSS3, SCSS/SASS, Responsive Web Design</span>
           </div>
-          <div class="skill-category">
-            <span class="skill-name">Testing & Quality</span>
-            <span class="skill-tags">Karma, Jasmine, Jest, Unit & Integration Testing, Robot Framework, Test Automation</span>
+          <div class="skill-row">
+            <span class="skill-category-label">Architecture & Performance:</span>
+            <span class="skill-items">Micro-frontends, Component-Driven Architecture, Lazy Loading, SSR, Web Performance, Core Web Vitals, RESTful API Integration</span>
           </div>
-          <div class="skill-category">
-            <span class="skill-name">Backend Integration</span>
-            <span class="skill-tags">Node.js, Express.js, RESTful APIs, JSON, HTTP/HTTPS Protocols, WebSocket</span>
+          <div class="skill-row">
+            <span class="skill-category-label">Testing & Code Quality:</span>
+            <span class="skill-items">Karma, Jasmine, Jest, Unit & Integration Testing, Code Reviews, Clean Code Architecture, CI/CD Quality Gates</span>
           </div>
-          <div class="skill-category">
-            <span class="skill-name">Cloud & DevOps</span>
-            <span class="skill-tags">AWS <span class="badge">Solutions Architect</span>, Docker, Kubernetes, Helm Charts, CI/CD Pipelines</span>
-          </div>
-          <div class="skill-category">
-            <span class="skill-name">Architecture & Leadership</span>
-            <span class="skill-tags">Micro-frontends, Component-driven Architecture, Mentorship, Sprint Planning, Agile/Scrum</span>
+          <div class="skill-row">
+            <span class="skill-category-label">Build, Tools & DevOps:</span>
+            <span class="skill-items">Webpack, Vite, Angular CLI, Git, GitHub Actions, npm, Docker, AWS (Solutions Architect Associate)</span>
           </div>
         }
       </div>
     </section>
 
     <!-- Work Experience -->
-    <section>
+    <section class="resume-section">
       <h2 class="section-title">{{ experienceSection()?.title || 'Work Experience' }}</h2>
 
       @for (exp of experienceContent().items; track exp.id) {
-        <div class="experience-item">
-          <div class="exp-header">
-            <span class="exp-company">{{ exp.company }}</span>
-            <span class="exp-dates">
+        <article class="experience-block">
+          <div class="exp-title-row">
+            <div class="exp-company-role">
+              <span class="company-name">{{ exp.company }}</span>
+              @if (exp.location) {
+                <span class="company-location">({{ exp.location }})</span>
+              }
+              <span class="role-separator">&mdash;</span>
+              <span class="role-name">{{ exp.roleProjectText || exp.role }}</span>
+            </div>
+            <div class="exp-date-badge">
               {{ exp.startDate }} &ndash; {{ exp.current ? 'Present' : exp.endDate }}
-            </span>
+            </div>
           </div>
-
-          <div class="exp-role-project">{{ exp.roleProjectText || exp.role }}</div>
 
           @if (exp.subProjects && exp.subProjects.length > 0) {
             @for (sub of exp.subProjects; track sub.project) {
-              <div class="exp-subheading">
-                Client: {{ sub.client }} | Project: {{ sub.project }}
-              </div>
-              <ul class="bullet-list">
-                @for (bullet of sub.bullets; track bullet) {
-                  <li>{{ bullet }}</li>
+              <div class="subproject-block">
+                @if (sub.client || sub.project) {
+                  <div class="subproject-header">
+                    <strong>Project:</strong> {{ sub.project }}
+                    @if (sub.client) {
+                      <span class="client-label">(Client: {{ sub.client }})</span>
+                    }
+                  </div>
                 }
-              </ul>
+                <ul class="ats-bullet-list">
+                  @for (bullet of sub.bullets; track bullet) {
+                    <li>{{ bullet }}</li>
+                  }
+                </ul>
+              </div>
             }
           } @else if (exp.bullets && exp.bullets.length > 0) {
-            <ul class="bullet-list">
+            <ul class="ats-bullet-list">
               @for (bullet of exp.bullets; track bullet) {
                 <li>{{ bullet }}</li>
               }
             </ul>
-          } @else {
-            <p class="summary-text" style="margin-bottom: 6px;">{{ exp.description }}</p>
-            @if (exp.technologies && exp.technologies.length > 0) {
-              <div class="skill-tags" style="font-size: 11.5px; color: var(--text-light);">
-                <strong>Technologies:</strong> {{ exp.technologies.join(', ') }}
-              </div>
-            }
+          } @else if (exp.description) {
+            <p class="section-paragraph">{{ exp.description }}</p>
           }
+        </article>
+      }
+    </section>
+
+    <!-- YouTube / Content Creation -->
+    <section class="resume-section">
+      <h2 class="section-title">{{ contentSection()?.title || 'YouTube / Content Creation' }}</h2>
+      @if (contentCreation().items && contentCreation().items.length > 0) {
+        @for (item of contentCreation().items; track item.id) {
+          <article class="content-block">
+            <div class="exp-title-row">
+              <div class="exp-company-role">
+                <span class="company-name">{{ item.role }}</span>
+                <span class="role-separator">&mdash;</span>
+                <span class="role-name">{{ item.channelOrPlatform }}</span>
+              </div>
+              <div class="exp-date-badge">{{ item.period }}</div>
+            </div>
+
+            @if (item.description) {
+              <p class="section-paragraph subproject-header">{{ item.description }}</p>
+            }
+
+            <ul class="ats-bullet-list">
+              @for (bullet of item.bullets; track bullet) {
+                <li>{{ bullet }}</li>
+              }
+            </ul>
+          </article>
+        }
+      } @else {
+        <article class="content-block">
+          <div class="exp-title-row">
+            <div class="exp-company-role">
+              <span class="company-name">Technical Creator & Educator</span>
+              <span class="role-separator">&mdash;</span>
+              <span class="role-name">YouTube & WorldGyan (me.worldgyan.com)</span>
+            </div>
+            <div class="exp-date-badge">2020 &ndash; Present</div>
+          </div>
+          <p class="section-paragraph subproject-header">
+            Producing educational technical content, architectural deep-dives, and guides for the global frontend developer community.
+          </p>
+          <ul class="ats-bullet-list">
+            <li>Produce detailed video tutorials and architectural guides covering modern Angular features (Signals, Standalone Architecture, RxJS state management, and performance tuning).</li>
+            <li>Create hands-on code walkthroughs and open-source GitHub starter repositories referenced by thousands of frontend developers.</li>
+            <li>Conduct community code-review sessions and technical interview preparation workshops focused on enterprise TypeScript and Angular architecture.</li>
+          </ul>
+        </article>
+      }
+    </section>
+
+    <!-- Education -->
+    <section class="resume-section">
+      <h2 class="section-title">{{ educationSection()?.title || 'Education' }}</h2>
+      @if (educationContent().items && educationContent().items.length > 0) {
+        @for (edu of educationContent().items; track edu.id) {
+          <div class="education-block">
+            <div class="exp-title-row">
+              <div class="exp-company-role">
+                <span class="company-name">{{ edu.institution }}</span>
+                <span class="role-separator">&mdash;</span>
+                <span class="role-name">{{ edu.degree }}</span>
+              </div>
+              <div class="exp-date-badge">{{ edu.period }}</div>
+            </div>
+            <div class="edu-location">{{ edu.location }}</div>
+          </div>
+        }
+      } @else {
+        <div class="education-block">
+          <div class="exp-title-row">
+            <div class="exp-company-role">
+              <span class="company-name">National Institute of Science and Technology (NIST)</span>
+              <span class="role-separator">&mdash;</span>
+              <span class="role-name">Bachelor of Technology (B.Tech) – Electrical & Electronics Engineering</span>
+            </div>
+            <div class="exp-date-badge">2013 &ndash; 2017</div>
+          </div>
+          <div class="edu-location">Berhampur, Odisha, India</div>
         </div>
       }
     </section>
 
-    <!-- Dual Column: Education & Certifications -->
-    <div class="dual-col">
-      <section>
-        <h2 class="section-title">{{ educationSection()?.title || 'Education' }}</h2>
-        @if (educationContent().items && educationContent().items.length > 0) {
-          @for (edu of educationContent().items; track edu.id) {
-            <div class="edu-item">
-              <div class="item-title">{{ edu.institution }}</div>
-              <div class="item-sub">{{ edu.degree }}</div>
-              <div class="item-sub text-light">{{ edu.location }} | {{ edu.period }}</div>
-            </div>
-          }
-        } @else {
-          <div class="edu-item">
-            <div class="item-title">National Institute of Science and Technology (NIST)</div>
-            <div class="item-sub">B.Tech – Electrical and Electronics Engineering</div>
-            <div class="item-sub text-light">Berhampur, Odisha | 2013 – 2017</div>
-          </div>
-        }
-      </section>
-
-      <section>
-        <h2 class="section-title">{{ certificationsSection()?.title || 'Certifications' }}</h2>
-        @if (certificationsContent().items && certificationsContent().items.length > 0) {
+    <!-- Certifications (Optional) -->
+    @if (certificationsContent().items && certificationsContent().items.length > 0) {
+      <section class="resume-section">
+        <h2 class="section-title">Certifications</h2>
+        <div class="skills-single-column">
           @for (cert of certificationsContent().items; track cert.id) {
-            <div class="cert-item">
-              <div class="item-title">{{ cert.title }}</div>
-              <div class="item-sub">{{ cert.issuer }} | {{ cert.year }}</div>
+            <div class="skill-row">
+              <span class="skill-category-label">{{ cert.title }}:</span>
+              <span class="skill-items">{{ cert.issuer }} ({{ cert.year }})</span>
             </div>
           }
-        } @else {
-          <div class="cert-item">
-            <div class="item-title">AWS Certified Solutions Architect – Associate</div>
-            <div class="item-sub">Amazon Web Services | 2025</div>
-          </div>
-          <div class="cert-item">
-            <div class="item-title">Certified AI Professional</div>
-            <div class="item-sub">GlobalLogic | 2026</div>
-          </div>
-          <div class="cert-item">
-            <div class="item-title">Angular – The Complete Guide</div>
-            <div class="item-sub">Udemy | 2021</div>
-          </div>
-        }
+        </div>
       </section>
-    </div>
+    }
   </main>
 </div>
-

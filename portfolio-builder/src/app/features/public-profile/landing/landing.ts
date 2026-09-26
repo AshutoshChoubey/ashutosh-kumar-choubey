@@ -11,6 +11,7 @@ import { AuthService } from '../../../core/services/auth';
 import {
   AboutContent,
   CertificationsContent,
+  ContentCreationContent,
   EducationContent,
   ExperienceContent,
   HeroContent,
@@ -38,7 +39,7 @@ export class Landing {
     this.authService.isAuthenticated()
   );
 
-  // Computed Section Extractors for the Resume Layout
+  // Computed Section Extractors for the ATS-Friendly Single-Column Layout
   readonly heroSection = computed(() =>
     this.sections().find((s) => s.type === 'hero')
   );
@@ -67,6 +68,13 @@ export class Landing {
     (this.experienceSection()?.content as ExperienceContent) || { items: [] }
   );
 
+  readonly contentSection = computed(() =>
+    this.sections().find((s) => s.type === 'content')
+  );
+  readonly contentCreation = computed<ContentCreationContent>(() =>
+    (this.contentSection()?.content as ContentCreationContent) || { items: [] }
+  );
+
   readonly educationSection = computed(() =>
     this.sections().find((s) => s.type === 'education')
   );
@@ -91,4 +99,3 @@ export class Landing {
     }
   }
 }
-
