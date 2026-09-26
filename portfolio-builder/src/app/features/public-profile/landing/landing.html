@@ -1,0 +1,232 @@
+<!-- Top Floating Control Bar (Hidden during Print) -->
+<nav class="action-topbar">
+  <div class="topbar-inner">
+    <div class="brand-badge">
+      <span class="pulse-indicator"></span>
+      <span class="brand-label">Resume Preview</span>
+    </div>
+
+    <div class="topbar-actions">
+      <button type="button" class="btn-topbar btn-print" (click)="printResume()" title="Print or Save as PDF">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        <span>Print / Save PDF</span>
+      </button>
+
+      @if (isAuthenticated()) {
+        <a routerLink="/builder" class="btn-topbar btn-studio" title="Manage portfolio in builder">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          <span>Builder Studio</span>
+        </a>
+        <button type="button" class="btn-topbar btn-logout" (click)="logout()" title="Sign out of admin session">
+          Sign Out
+        </button>
+      } @else {
+        <a routerLink="/login" class="btn-topbar btn-login" title="Admin access to builder">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span>Admin Login</span>
+        </a>
+      }
+    </div>
+  </div>
+</nav>
+
+<!-- Main Resume Paper Document -->
+<div class="page-container">
+  <main class="page">
+    <!-- Header -->
+    <header>
+      <div class="name-role">
+        <h1>{{ heroContent().fullName || 'Ashutosh Kumar Choubey' }}</h1>
+        <div class="role-title">
+          {{ heroContent().tagline || 'Senior Software Developer | Angular & Frontend Lead (React, Angular, AI)' }}
+        </div>
+      </div>
+      <div class="contact-bar">
+        @if (heroContent().phone) {
+          <div class="contact-item">
+            <span>📞</span>
+            <span>{{ heroContent().phone }}</span>
+          </div>
+        }
+        @if (heroContent().email) {
+          <div class="contact-item">
+            <span>✉️</span>
+            <a [href]="'mailto:' + heroContent().email">{{ heroContent().email }}</a>
+          </div>
+        }
+        @if (heroContent().linkedinUrl) {
+          <div class="contact-item">
+            <span>🔗</span>
+            <a [href]="heroContent().linkedinUrl" target="_blank" rel="noopener noreferrer">
+              linkedin.com/in/ashutosh-kumar-choubey
+            </a>
+          </div>
+        }
+        @if (heroContent().websiteUrl) {
+          <div class="contact-item">
+            <span>🌐</span>
+            <a [href]="heroContent().websiteUrl" target="_blank" rel="noopener noreferrer">
+              me.worldgyan.com
+            </a>
+          </div>
+        }
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section>
+      <h2 class="section-title">{{ aboutSection()?.title || 'Professional Summary' }}</h2>
+      <p class="summary-text">
+        Senior Software Developer & Frontend Lead with <strong>9+ years of experience</strong> architecting scalable enterprise systems and leading frontend development teams. Deep expertise across <strong>Angular (v5–21), React, TypeScript, NgRx, and RxJS</strong>. Certified in AWS and Artificial Intelligence, with extensive experience integrating modern AI-assisted workflows (GitHub Copilot, Google Gemini, LLMs) to accelerate delivery. Proven history of elevating unit test coverage up to 95%, establishing code quality frameworks, and delivering high-impact micro-frontend solutions for clients including Google LLC and Ericsson.
+      </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section>
+      <h2 class="section-title">{{ skillsSection()?.title || 'Technical Skills' }}</h2>
+      <div class="skills-grid">
+        @if (skillsContent().categories && skillsContent().categories!.length > 0) {
+          @for (cat of skillsContent().categories; track cat.name) {
+            <div class="skill-category">
+              <span class="skill-name">{{ cat.name }}</span>
+              <span class="skill-tags">
+                {{ cat.tags }}
+                @if (cat.badge) {
+                  <span class="badge">{{ cat.badge }}</span>
+                }
+              </span>
+            </div>
+          }
+        } @else {
+          <div class="skill-category">
+            <span class="skill-name">Frontend Technologies</span>
+            <span class="skill-tags">Angular (5–21), React, TypeScript, JavaScript (ES6+), HTML5, CSS3, SCSS, RxJS, NgRx, Redux</span>
+          </div>
+          <div class="skill-category">
+            <span class="skill-name">AI & Modern Dev Tools</span>
+            <span class="skill-tags">AI-assisted development (GitHub Copilot, Google Gemini, Claude), LLM Integration, Prompt Engineering <span class="badge">Certified AI Pro</span></span>
+          </div>
+          <div class="skill-category">
+            <span class="skill-name">Testing & Quality</span>
+            <span class="skill-tags">Karma, Jasmine, Jest, Unit & Integration Testing, Robot Framework, Test Automation</span>
+          </div>
+          <div class="skill-category">
+            <span class="skill-name">Backend Integration</span>
+            <span class="skill-tags">Node.js, Express.js, RESTful APIs, JSON, HTTP/HTTPS Protocols, WebSocket</span>
+          </div>
+          <div class="skill-category">
+            <span class="skill-name">Cloud & DevOps</span>
+            <span class="skill-tags">AWS <span class="badge">Solutions Architect</span>, Docker, Kubernetes, Helm Charts, CI/CD Pipelines</span>
+          </div>
+          <div class="skill-category">
+            <span class="skill-name">Architecture & Leadership</span>
+            <span class="skill-tags">Micro-frontends, Component-driven Architecture, Mentorship, Sprint Planning, Agile/Scrum</span>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section>
+      <h2 class="section-title">{{ experienceSection()?.title || 'Work Experience' }}</h2>
+
+      @for (exp of experienceContent().items; track exp.id) {
+        <div class="experience-item">
+          <div class="exp-header">
+            <span class="exp-company">{{ exp.company }}</span>
+            <span class="exp-dates">
+              {{ exp.startDate }} &ndash; {{ exp.current ? 'Present' : exp.endDate }}
+            </span>
+          </div>
+
+          <div class="exp-role-project">{{ exp.roleProjectText || exp.role }}</div>
+
+          @if (exp.subProjects && exp.subProjects.length > 0) {
+            @for (sub of exp.subProjects; track sub.project) {
+              <div class="exp-subheading">
+                Client: {{ sub.client }} | Project: {{ sub.project }}
+              </div>
+              <ul class="bullet-list">
+                @for (bullet of sub.bullets; track bullet) {
+                  <li>{{ bullet }}</li>
+                }
+              </ul>
+            }
+          } @else if (exp.bullets && exp.bullets.length > 0) {
+            <ul class="bullet-list">
+              @for (bullet of exp.bullets; track bullet) {
+                <li>{{ bullet }}</li>
+              }
+            </ul>
+          } @else {
+            <p class="summary-text" style="margin-bottom: 6px;">{{ exp.description }}</p>
+            @if (exp.technologies && exp.technologies.length > 0) {
+              <div class="skill-tags" style="font-size: 11.5px; color: var(--text-light);">
+                <strong>Technologies:</strong> {{ exp.technologies.join(', ') }}
+              </div>
+            }
+          }
+        </div>
+      }
+    </section>
+
+    <!-- Dual Column: Education & Certifications -->
+    <div class="dual-col">
+      <section>
+        <h2 class="section-title">{{ educationSection()?.title || 'Education' }}</h2>
+        @if (educationContent().items && educationContent().items.length > 0) {
+          @for (edu of educationContent().items; track edu.id) {
+            <div class="edu-item">
+              <div class="item-title">{{ edu.institution }}</div>
+              <div class="item-sub">{{ edu.degree }}</div>
+              <div class="item-sub text-light">{{ edu.location }} | {{ edu.period }}</div>
+            </div>
+          }
+        } @else {
+          <div class="edu-item">
+            <div class="item-title">National Institute of Science and Technology (NIST)</div>
+            <div class="item-sub">B.Tech – Electrical and Electronics Engineering</div>
+            <div class="item-sub text-light">Berhampur, Odisha | 2013 – 2017</div>
+          </div>
+        }
+      </section>
+
+      <section>
+        <h2 class="section-title">{{ certificationsSection()?.title || 'Certifications' }}</h2>
+        @if (certificationsContent().items && certificationsContent().items.length > 0) {
+          @for (cert of certificationsContent().items; track cert.id) {
+            <div class="cert-item">
+              <div class="item-title">{{ cert.title }}</div>
+              <div class="item-sub">{{ cert.issuer }} | {{ cert.year }}</div>
+            </div>
+          }
+        } @else {
+          <div class="cert-item">
+            <div class="item-title">AWS Certified Solutions Architect – Associate</div>
+            <div class="item-sub">Amazon Web Services | 2025</div>
+          </div>
+          <div class="cert-item">
+            <div class="item-title">Certified AI Professional</div>
+            <div class="item-sub">GlobalLogic | 2026</div>
+          </div>
+          <div class="cert-item">
+            <div class="item-title">Angular – The Complete Guide</div>
+            <div class="item-sub">Udemy | 2021</div>
+          </div>
+        }
+      </section>
+    </div>
+  </main>
+</div>
