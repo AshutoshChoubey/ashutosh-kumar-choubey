@@ -56,8 +56,7 @@ export class ResumeExportService {
         useCORS: true,
         allowTaint: true,
         backgroundColor: '#ffffff',
-        logging: false,
-        windowWidth: 860
+        logging: false
       });
 
       const pdf = new jsPDF({
@@ -86,6 +85,7 @@ export class ResumeExportService {
         '.resume-header',
         '.resume-section',
         '.experience-block',
+        '.subproject-item',
         '.subproject-block',
         '.content-block',
         '.education-block',

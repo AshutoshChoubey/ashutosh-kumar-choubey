@@ -184,39 +184,26 @@
   text-align: center;
 
   .header-name-wrap {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .candidate-name {
-    font-size: 27px;
+    font-size: 26px;
     font-weight: 800;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.5px;
     color: var(--primary-navy);
     text-transform: uppercase;
-    margin: 0 0 6px;
+    margin: 0 0 4px;
+    line-height: 1.25;
   }
 
-  .role-badge-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
-    border: 1px solid #c7d2fe;
-    padding: 4px 14px;
-    border-radius: 9999px;
-
-    .role-badge-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #2563eb;
-    }
-
-    .candidate-role {
-      font-size: 13.5px;
-      font-weight: 700;
-      color: #1e3a8a;
-    }
+  .candidate-role-subtitle {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--secondary-blue);
+    letter-spacing: 0.25px;
+    line-height: 1.4;
+    display: inline-block;
   }
 
   .contact-pill-row {
@@ -225,13 +212,14 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    margin-top: 14px;
+    margin-top: 12px;
 
     .contact-pill {
       display: inline-flex;
       align-items: center;
       gap: 5px;
       padding: 3px 10px;
+      margin: 3px 4px;
       border-radius: 9999px;
       font-size: 12px;
       font-weight: 600;
@@ -489,6 +477,99 @@
   }
 }
 
+/* Work Experience & Education Header Row */
+.exp-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 3px;
+
+  .exp-company-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .company-badge-icon,
+    .edu-badge-icon {
+      font-size: 13px;
+      margin-right: 6px;
+    }
+
+    .exp-company {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-right: 6px;
+    }
+
+    .exp-location {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+  }
+
+  .exp-dates-pill {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    white-space: nowrap;
+    margin-left: auto;
+  }
+}
+
+.exp-role-project {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--accent-blue);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+/* Subprojects within Experience (e.g. Google DevShop, Ericsson BAM) */
+.subproject-item {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  padding-left: 12px;
+  border-left: 2.5px solid #dbeafe;
+
+  &:first-child {
+    margin-top: 6px;
+  }
+
+  .subproject-headline {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+    line-height: 1.4;
+
+    .subproject-client {
+      color: #334155;
+      font-weight: 600;
+      margin-right: 6px;
+    }
+
+    .subproject-divider {
+      color: #94a3b8;
+      margin-right: 6px;
+      font-weight: 400;
+    }
+
+    .subproject-project {
+      color: var(--primary-navy);
+      font-weight: 700;
+    }
+  }
+}
+
+/* Legacy/Content exp-title-row for Content Creation */
 .exp-title-row {
   display: flex;
   justify-content: space-between;
@@ -508,22 +589,19 @@
     .creator-badge-icon,
     .edu-badge-icon {
       font-size: 13px;
+      margin-right: 4px;
     }
 
     .company-name {
       font-weight: 700;
       color: var(--primary-navy);
-    }
-
-    .company-location {
-      font-weight: 500;
-      color: var(--text-muted);
-      font-size: 12px;
+      margin-right: 4px;
     }
 
     .role-separator {
       color: var(--border-line);
       font-size: 12px;
+      margin-right: 4px;
     }
 
     .role-name {
@@ -569,42 +647,6 @@
       background: #fff1f2;
       color: #9f1239;
       border-color: #fecdd3;
-    }
-  }
-}
-
-.subproject-block {
-  margin-top: 8px;
-  margin-bottom: 8px;
-  padding-left: 10px;
-  border-left: 2px solid #e0e7ff;
-
-  .subproject-title-bar {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6px;
-    font-size: 12.5px;
-    margin-bottom: 4px;
-
-    .project-pill-label {
-      font-weight: 700;
-      color: var(--primary-navy);
-    }
-
-    .project-name {
-      font-weight: 600;
-      color: #1e3a8a;
-    }
-
-    .client-pill-tag {
-      background: #f1f5f9;
-      color: #475569;
-      border: 1px solid #e2e8f0;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 1px 7px;
-      border-radius: 4px;
     }
   }
 }

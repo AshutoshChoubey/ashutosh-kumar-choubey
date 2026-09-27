@@ -100,9 +100,8 @@
     <header class="resume-header">
       <div class="header-name-wrap">
         <h1 class="candidate-name">{{ heroContent().fullName || 'Ashutosh Kumar Choubey' }}</h1>
-        <div class="role-badge-pill">
-          <span class="role-badge-dot"></span>
-          <span class="candidate-role">{{ heroContent().tagline || 'Lead Frontend Developer | Angular & TypeScript Specialist' }}</span>
+        <div class="candidate-role-subtitle">
+          {{ heroContent().tagline || 'Lead Frontend Developer | Angular & TypeScript Specialist' }}
         </div>
       </div>
 
@@ -280,33 +279,34 @@
 
       @for (exp of experienceContent().items; track exp.id) {
         <article class="experience-block">
-          <div class="exp-title-row">
-            <div class="exp-left-header">
+          <!-- Top Row: Company & Location on Left, Dates on Right -->
+          <div class="exp-header-row">
+            <div class="exp-company-group">
               <span class="company-badge-icon">🏢</span>
-              <span class="company-name">{{ exp.company }}</span>
+              <span class="exp-company">{{ exp.company }}</span>
               @if (exp.location) {
-                <span class="company-location">({{ exp.location }})</span>
+                <span class="exp-location">({{ exp.location }})</span>
               }
-              <span class="role-separator">&mdash;</span>
-              <span class="role-name">{{ exp.roleProjectText || exp.role }}</span>
             </div>
-            <span class="date-badge-pill">
+            <span class="exp-dates-pill">
               {{ exp.startDate }} &ndash; {{ exp.current ? 'Present' : exp.endDate }}
             </span>
           </div>
 
+          <!-- Role / Main Designation Title -->
+          <div class="exp-role-project">{{ exp.roleProjectText || exp.role }}</div>
+
+          <!-- If Experience has multiple subprojects (e.g. GlobalLogic: Google DevShop + Ericsson BAM) -->
           @if (exp.subProjects && exp.subProjects.length > 0) {
             @for (sub of exp.subProjects; track sub.project) {
-              <div class="subproject-block">
-                @if (sub.client || sub.project) {
-                  <div class="subproject-title-bar">
-                    <span class="project-pill-label">Project:</span>
-                    <span class="project-name">{{ sub.project }}</span>
-                    @if (sub.client) {
-                      <span class="client-pill-tag">Client: {{ sub.client }}</span>
-                    }
-                  </div>
-                }
+              <div class="subproject-item">
+                <div class="subproject-headline">
+                  @if (sub.client) {
+                    <span class="subproject-client">Client: {{ sub.client }}</span>
+                    <span class="subproject-divider">|</span>
+                  }
+                  <span class="subproject-project">Project: {{ sub.project }}</span>
+                </div>
 
                 <ul class="ats-bullet-list">
                   @for (bullet of sub.bullets; track bullet) {
@@ -469,29 +469,29 @@
       @if (educationContent().items && educationContent().items.length > 0) {
         @for (edu of educationContent().items; track edu.id) {
           <div class="education-block">
-            <div class="exp-title-row">
-              <div class="exp-left-header">
+            <div class="exp-header-row">
+              <div class="exp-company-group">
                 <span class="edu-badge-icon">🎓</span>
-                <span class="company-name">{{ edu.institution }}</span>
-                <span class="role-separator">&mdash;</span>
-                <span class="role-name">{{ edu.degree }}</span>
+                <span class="exp-company">{{ edu.institution }}</span>
               </div>
-              <span class="date-badge-pill">{{ edu.period }}</span>
+              <span class="exp-dates-pill">{{ edu.period }}</span>
             </div>
-            <div class="edu-location">{{ edu.location }}</div>
+            <div class="exp-role-project">{{ edu.degree }}</div>
+            @if (edu.location) {
+              <div class="edu-location">{{ edu.location }}</div>
+            }
           </div>
         }
       } @else {
         <div class="education-block">
-          <div class="exp-title-row">
-            <div class="exp-left-header">
+          <div class="exp-header-row">
+            <div class="exp-company-group">
               <span class="edu-badge-icon">🎓</span>
-              <span class="company-name">National Institute of Science and Technology (NIST)</span>
-              <span class="role-separator">&mdash;</span>
-              <span class="role-name">Bachelor of Technology (B.Tech) – Electrical & Electronics Engineering</span>
+              <span class="exp-company">National Institute of Science and Technology (NIST)</span>
             </div>
-            <span class="date-badge-pill">2013 &ndash; 2017</span>
+            <span class="exp-dates-pill">2013 &ndash; 2017</span>
           </div>
+          <div class="exp-role-project">Bachelor of Technology (B.Tech) – Electrical & Electronics Engineering</div>
           <div class="edu-location">Berhampur, Odisha, India</div>
         </div>
       }
