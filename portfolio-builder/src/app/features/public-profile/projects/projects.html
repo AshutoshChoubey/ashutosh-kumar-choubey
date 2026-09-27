@@ -166,7 +166,7 @@
             </div>
 
             <!-- Title & Role -->
-            <h3 class="project-title">{{ project.title }}</h3>
+            <div class="title-with-badge"><h3 class="project-title">{{ project.title }}</h3>@if (project.isPreAI) {<span class="legacy-badge">🏛️ Legacy Archive (Pre-AI Code)</span>}</div>
             <div class="project-role-bar">
               <span class="role-title">{{ project.role }}</span>
             </div>
@@ -195,7 +195,12 @@
 
             <!-- Description -->
             @if (project.description) {
-              <p class="project-description">{{ project.description }}</p>
+              <p class="project-description">{{ project.description }}</p>}
+
+            @if (project.isPreAI) {
+              <p class="project-description legacy-disclaimer">
+                Historical Project: This repository contains pre-AI, manually authored code used during my live classes and enterprise roles. Due to deprecated older dependencies, it is presented as a structural case study of my foundational architecture and complex RxJS/TypeScript logic, rather than a runnable application.
+              </p>
             }
 
             <!-- Rounded Technology Pill Tags -->
