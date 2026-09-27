@@ -15,7 +15,7 @@ import {
 } from '../../shared/models/profile.model';
 import { StorageService } from './storage';
 
-export const PROFILE_STORAGE_KEY = 'pb_portfolio_sections_v1';
+export const PROFILE_STORAGE_KEY = 'pb_portfolio_sections_v2';
 
 @Injectable({
   providedIn: 'root'

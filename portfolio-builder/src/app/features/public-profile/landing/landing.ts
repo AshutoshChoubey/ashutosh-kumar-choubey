@@ -170,14 +170,10 @@ export class Landing implements OnInit {
         : null);
     if (!el) return;
 
-    const rawName = this.heroContent().fullName || 'Ashutosh_Kumar_Choubey';
-    const cleanName = rawName.trim().replace(/[^a-zA-Z0-9_-]/g, '_');
-    await this.exportService.downloadPdf(el, `${cleanName}_Resume.pdf`);
+    await this.exportService.downloadPdf(el, 'Ashutosh_Kumar_Choubey_9+_Years_of_Experience_Senior_Frontend_Engineer.pdf');
   }
 
   downloadDoc(): void {
-    const rawName = this.heroContent().fullName || 'Ashutosh_Kumar_Choubey';
-    const cleanName = rawName.trim().replace(/[^a-zA-Z0-9_-]/g, '_');
     this.exportService.downloadDoc(
       {
         hero: this.heroContent(),
@@ -188,7 +184,7 @@ export class Landing implements OnInit {
         education: this.educationContent(),
         certifications: this.certificationsContent()
       },
-      `${cleanName}_Resume.doc`
+      'Ashutosh_Kumar_Choubey_9+_Years_of_Experience_Senior_Frontend_Engineer.doc'
     );
   }
 
