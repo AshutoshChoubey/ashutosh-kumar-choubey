@@ -124,6 +124,26 @@ export class ProfileStateService {
           )
       );
 
+    const hasPrimeNGSkill =
+      saved &&
+      Array.isArray(saved) &&
+      saved.some(
+        (s) =>
+          s.type === 'skills' &&
+          (s.content as any)?.categories?.some((cat: any) =>
+            cat.tags?.toLowerCase().includes('primeng')
+          )
+      );
+
+    const hasCleanSummary =
+      saved &&
+      Array.isArray(saved) &&
+      saved.some(
+        (s) =>
+          s.type === 'about' &&
+          !(s.content as any)?.summary?.toLowerCase().includes('core web vital')
+      );
+
     if (
       saved &&
       Array.isArray(saved) &&
@@ -132,7 +152,9 @@ export class ProfileStateService {
       hasWorldGyanDetails &&
       hasCertLinks &&
       hasAllProjectDetails &&
-      hasModernTech
+      hasModernTech &&
+      hasPrimeNGSkill &&
+      hasCleanSummary
     ) {
       this._sections.set(saved);
     } else {

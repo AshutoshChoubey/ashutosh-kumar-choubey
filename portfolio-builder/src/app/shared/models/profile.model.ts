@@ -170,7 +170,7 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
     displayOrder: 2,
     content: {
       summary:
-        'Lead Frontend Developer with 9+ years of professional experience architecting robust, scalable enterprise web systems and leading frontend engineering squads. Deep specialization in modern Angular (v14–19, Standalone Components, Signals), TypeScript, RxJS, and NgRx state management. Proven track record of designing modular micro-frontend architectures, engineering reusable component design systems, elevating automated unit test coverage to 95%, and optimizing Core Web Vitals across mission-critical enterprise applications.'
+        'Lead Frontend Developer with 9+ years of solid experience architecting scalable enterprise frontend solutions, leading engineering squads, and mentoring developers through YouTube (WorldGyan). Deep specialization in modern Angular (v14–19, Standalone Components, Signals), TypeScript, Node.js, RxJS, and NgRx state management. Proven track record of designing modular micro-frontend architectures, engineering reusable design systems, and elevating automated unit test coverage to 95%.'
     } as AboutContent
   },
   {
@@ -181,24 +181,20 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
     content: {
       categories: [
         {
-          name: 'Frontend Frameworks & State',
-          tags: 'Angular (v14–19), TypeScript, RxJS, NgRx, Angular Signals, Standalone Components, Angular Material, Reactive Forms'
+          name: 'Frameworks & Libraries',
+          tags: 'Standalone Components, Angular Signals, Angular Material, Angular Forms, PrimeNG, RxJS'
         },
         {
           name: 'Languages & Web Standards',
-          tags: 'TypeScript (Strict Mode), JavaScript (ES6+), HTML5, CSS3, SCSS/SASS, Responsive Web Design'
+          tags: 'HTML5, CSS3/SASS, JavaScript (ES6+), TypeScript, WCAG (Accessibility)'
         },
         {
           name: 'Architecture & Performance',
-          tags: 'Micro-frontends, Component-Driven Architecture, Lazy Loading, SSR, Web Performance, Core Web Vitals, RESTful API Integration'
+          tags: 'Micro-frontends, NgRx (State Management), Lazy Loading, Server-Side Rendering (SSR)'
         },
         {
-          name: 'Testing & Code Quality',
-          tags: 'Karma, Jasmine, Jest, Unit & Integration Testing, Code Reviews, Clean Code Architecture, CI/CD Quality Gates'
-        },
-        {
-          name: 'Build, Tools & DevOps',
-          tags: 'Webpack, Vite, Angular CLI, Git, GitHub Actions, npm, Docker, AWS (Solutions Architect Associate)'
+          name: 'Testing & DevOps',
+          tags: 'Robot Framework, GitHub Actions, Jest/Jasmine, Docker, Kubernetes'
         }
       ]
     } as SkillsContent
@@ -224,12 +220,12 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
             {
               client: 'Google LLC',
               project: 'Google DevShop',
-              technologies: ['Angular 19', 'TypeScript', 'RxJS', 'NgRx', 'Jasmine', 'Karma', 'CI/CD'],
+              technologies: ['Angular 19', 'TypeScript', 'RxJS', 'NgRx', 'Jasmine', 'Karma'],
               bullets: [
                 'Architect enterprise frontend solutions utilizing Angular 18/19 and TypeScript, designing reactive workflows with RxJS and NgRx state management.',
                 'Lead and mentor a team of frontend engineers on clean architectural patterns, TypeScript best practices, and performance profiling.',
                 'Resolve complex production issues across mission-critical enterprise platforms, driving automated test coverage from 45% to 95% using Jasmine and Karma.',
-                'Establish rigorous code review standards and CI/CD validation gates to eliminate regression bugs and ensure high release velocity.'
+                'Establish rigorous code review standards and automated testing gates to eliminate regression bugs and ensure high release velocity.'
               ]
             },
             {

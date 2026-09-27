@@ -1,7 +1,7 @@
 import { DetailedProject } from '../../shared/models/project.model';
 
 export const DETAILED_PROJECTS: DetailedProject[] = [
-  // 🏢 Enterprise & Professional Client Projects
+  // 🏢 Enterprise Client Projects
   {
     id: 'proj-devshop',
     title: 'Google DevShop (Enterprise Developer Portal)',
@@ -19,8 +19,7 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
       'NgRx',
       'Jasmine',
       'Karma',
-      'Micro-frontends',
-      'CI/CD'
+      'Micro-frontends'
     ],
     description:
       'Mission-critical developer enterprise portal designed for Google engineers and external partners, streamlining project access, service discovery, and workflow automation.',
@@ -28,7 +27,7 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
       'Architect enterprise frontend solutions utilizing Angular 18/19 and TypeScript, designing reactive workflows with RxJS and NgRx state management.',
       'Lead and mentor a squad of frontend engineers on clean architectural patterns, TypeScript best practices, and performance profiling.',
       'Resolve complex production issues across mission-critical enterprise platforms, driving automated test coverage from 45% to 95% using Jasmine and Karma.',
-      'Establish rigorous code review standards and CI/CD validation gates to eliminate regression bugs and ensure high release velocity.'
+      'Establish rigorous code review standards and automated testing gates to eliminate regression bugs and ensure high release velocity.'
     ]
   },
   {
@@ -84,6 +83,31 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
       'Led Frontend development in Angular 8 and Backend API development using Node.js.',
       'Connected E-commerce site to CRM using Web APIs.',
       'Understood client requirements, delegated tasks among team members, and provided technical support.'
+    ]
+  },
+  {
+    id: 'proj-insight-retail',
+    title: 'Retail POS Platform',
+    category: 'enterprise',
+    categoryLabel: 'Retail & Point of Sale',
+    client: 'Insight Retail Software Inc',
+    organization: 'Navigators Software Pvt. Ltd.',
+    role: 'Angular Developer',
+    duration: 'May 2019 – Sep 2019',
+    technologies: [
+      'Angular 7',
+      'TypeScript',
+      'RxJS',
+      'Node.js',
+      'POS Hardware Integration',
+      'HTML5/SCSS',
+      'Responsive UI'
+    ],
+    description:
+      'Cross-platform retail point-of-sale single-page application optimized for hardware touch displays and barcode terminal peripherals.',
+    responsibilities: [
+      'Developed cross-platform retail point-of-sale applications using Angular 7, and NodeJS, enhancing UI responsiveness and improving user experience in collaboration with QA/UX teams.',
+      'Optimized 15+ responsive UI components for various screen sizes and collaborated closely with QA and UX teams to resolve UI/UX defects.'
     ]
   },
   {
@@ -186,247 +210,292 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
       'Participated in sprint planning, testing phases, and client rollout walkthroughs.'
     ]
   },
-  {
-    id: 'proj-insight-retail',
-    title: 'Retail POS Platform',
-    category: 'enterprise',
-    categoryLabel: 'Retail & Point of Sale',
-    client: 'Insight Retail Software Inc',
-    organization: 'Navigators Software Pvt. Ltd.',
-    role: 'Angular Developer',
-    duration: 'May 2019 – Sep 2019',
-    technologies: [
-      'Angular 7',
-      'TypeScript',
-      'RxJS',
-      'Node.js',
-      'POS Hardware Integration',
-      'HTML5/SCSS',
-      'Responsive UI'
-    ],
-    description:
-      'Cross-platform retail point-of-sale single-page application optimized for hardware touch displays and barcode terminal peripherals.',
-    responsibilities: [
-      'Developed cross-platform retail point-of-sale applications using Angular 7, and NodeJS, enhancing UI responsiveness and improving user experience in collaboration with QA/UX teams.',
-      'Optimized 15+ responsive UI components for various screen sizes and collaborated closely with QA and UX teams to resolve UI/UX defects.'
-    ]
-  },
 
-  // 💻 Open Source & GitHub Projects
+  // 💻 Main Development Projects (Open Source & Full-Stack)
   {
     id: 'proj-daily-task-report',
-    title: 'Daily Task Report (Angular & MERN)',
+    title: 'Daily Task Report Application',
     category: 'opensource',
     categoryLabel: 'Open Source Software',
     role: 'Full Stack Developer / Creator',
-    technologies: [
-      'Angular',
-      'TypeScript',
-      'RxJS',
-      'React.js',
-      'JavaScript',
-      'Node.js',
-      'Express.js',
-      'MongoDB'
-    ],
+    technologies: ['Angular', 'Node.js', 'Express', 'Authentication', 'JWT'],
     featured: true,
     description:
-      'A timesheet and task reporting application originally built in Angular 7 years ago, and recently completely rebuilt utilizing the modern React + Node.js (MERN) stack.',
+      'A full-stack task management and reporting application built to track daily developer workflows securely.',
     responsibilities: [
-      'Engineered complete daily work log tracking, milestone hour submission, and automated team supervisor approval workflows.',
-      'Implemented JWT session authentication, MongoDB aggregate pipeline analytics, and CSV report export.',
-      'Published open-source repositories for both the original Angular architecture and the updated MERN full-stack edition.'
+      'Architected end-to-end task logging and workflow reporting pipelines for developer team accountability.',
+      'Implemented secure JWT session authentication, password hashing, and role-based access control.',
+      'Published open-source repository on GitHub for community reference.'
     ],
     links: [
       {
-        label: 'Angular Repository',
-        url: 'https://github.com/AshutoshChoubey/dailyTaskReport',
+        label: 'GitHub Repo',
+        url: 'https://github.com/AshutoshChoubey/AngularNodeAuthentication',
         type: 'github'
-      },
+      }
+    ]
+  },
+  {
+    id: 'proj-mern-app',
+    title: 'MERN Stack Application',
+    category: 'opensource',
+    categoryLabel: 'Full-Stack Architecture',
+    role: 'Full Stack Developer / Creator',
+    technologies: ['MongoDB', 'Express.js', 'React', 'Node.js'],
+    featured: true,
+    description:
+      'A standalone full-stack application leveraging the complete MERN ecosystem for high-performance data handling.',
+    responsibilities: [
+      'Built decoupled REST API services with Express.js and Node.js integrated with MongoDB document storage.',
+      'Engineered interactive React client interfaces with reactive state management and optimistic UI updates.',
+      'Containerized development environments and published the complete repository.'
+    ],
+    links: [
       {
-        label: 'MERN Repository (React + Node)',
+        label: 'GitHub Repo',
         url: 'https://github.com/AshutoshChoubey/DTRnodeReact',
         type: 'github'
       }
     ]
   },
   {
-    id: 'proj-laravel-blog',
-    title: 'Laravel 12 Blog Management System',
+    id: 'proj-django-react',
+    title: 'Django REST & React CRUD',
     category: 'opensource',
-    categoryLabel: 'Open Source Software',
-    role: 'Backend Developer / Creator',
-    technologies: ['Laravel 12', 'PHP', 'JavaScript', 'HTML/CSS', 'MySQL', 'Blade'],
+    categoryLabel: 'Cross-Framework Architecture',
+    role: 'Full Stack Developer & Educator',
+    technologies: ['React', 'Django', 'Python', 'REST API', 'CRUD'],
     featured: true,
     description:
-      'A complete modern blog management system built utilizing the latest features of Laravel 12, featuring dynamic content publishing and administrative dashboards.',
+      'A seamless full-stack application demonstrating cross-framework integration with a Python backend and a React frontend.',
     responsibilities: [
-      'Implemented clean MVC patterns leveraging Laravel 12 Eloquent ORM, database migrations, and seeded data fixtures.',
-      'Built article categorization, markdown/rich-text publishing engines, slug generators, and role-based permissions.',
-      'Open-sourced the full project codebase on GitHub for educational and production reference.'
+      'Architected Django REST Framework serialization layers, model viewsets, and token-based authentication.',
+      'Engineered clean React state management handling asynchronous API calls, error boundaries, and loading states.',
+      'Published complete project source code and educational walkthroughs.'
     ],
     links: [
       {
-        label: 'GitHub Repository',
-        url: 'https://github.com/AshutoshChoubey/laravel12BlogManage',
+        label: 'GitHub Repo',
+        url: 'https://github.com/AshutoshChoubey/djangorestframeworkandreact',
         type: 'github'
       }
     ]
   },
   {
     id: 'proj-angular-gst',
-    title: 'Angular GST Management Application',
+    title: 'Angular GST Management',
     category: 'opensource',
-    categoryLabel: 'Open Source Software',
+    categoryLabel: 'Enterprise UI Application',
     role: 'Full Stack Developer / Creator',
-    technologies: [
-      'Angular',
-      'TypeScript',
-      'RxJS',
-      'JavaScript',
-      'HTML/SCSS',
-      'Reactive Forms'
-    ],
+    technologies: ['Angular', 'Tax Management', 'Enterprise UI'],
     featured: true,
     description:
-      'A full-stack GST management application designed for enterprise-level billing, automated tax breakdown calculation, and invoice bookkeeping.',
+      'A comprehensive legacy application for managing Goods and Services Tax (GST) data and reporting.',
     responsibilities: [
       'Engineered automated CGST, SGST, and IGST tax bracket calculators with strict decimal validation.',
-      'Built multi-item line invoice generation interfaces with client auto-complete and printable thermal receipt styling.',
+      'Built multi-item line invoice generation interfaces with client auto-complete and printable formatting.',
       'Published open-source source repository on GitHub.'
     ],
     links: [
       {
-        label: 'GitHub Repository',
+        label: 'GitHub Repo',
         url: 'https://github.com/AshutoshChoubey/AngularGST',
         type: 'github'
       }
     ]
   },
-  {
-    id: 'proj-django-react',
-    title: 'Django REST & React CRUD Architecture',
-    category: 'opensource',
-    categoryLabel: 'Open Source & Video Series',
-    organization: 'WorldGyan',
-    role: 'Full Stack Developer & Instructor',
-    technologies: [
-      'Django REST Framework',
-      'Python',
-      'React.js',
-      'JavaScript',
-      'Fetch/Axios API'
-    ],
-    description:
-      'A complete reference architecture and educational masterclass on integrating Django REST API with a React.js single-page application executing full CRUD operations.',
-    responsibilities: [
-      'Architected Django REST Framework serialization layers, model viewsets, and token-based authentication.',
-      'Engineered clean React state management handling asynchronous API calls, error boundaries, and loading states.',
-      'Created step-by-step video masterclass series and published complete project source code.'
-    ],
-    links: [
-      {
-        label: 'GitHub Repository',
-        url: 'https://github.com/AshutoshChoubey/djangorestframeworkandreact',
-        type: 'github'
-      },
-      {
-        label: 'Watch Video: Intro & Setup',
-        url: 'https://www.youtube.com/watch?v=eTpXGyzok14',
-        type: 'youtube'
-      },
-      {
-        label: 'Watch Video: Full CRUD React.js',
-        url: 'https://youtu.be/RLpp_2akDok',
-        type: 'youtube'
-      },
-      {
-        label: 'Watch Video: Full Django REST API',
-        url: 'https://www.youtube.com/watch?v=prH9ysc8Dmg',
-        type: 'youtube'
-      }
-    ]
-  },
 
-  // 🎥 Tutorial Series & Playlists (WorldGyan)
+  // 📺 YouTube Series & Open Source Contributions (WorldGyan)
   {
-    id: 'proj-react-mern-series',
-    title: 'React & MERN Stack Development Series',
+    id: 'proj-ts-prep',
+    title: 'TypeScript Interview Preparation Series',
     category: 'tutorial',
-    categoryLabel: 'WorldGyan Video Series',
+    categoryLabel: 'Video Series & Open Source',
     organization: 'WorldGyan (@worldgyan)',
-    role: 'Content Creator & Instructor',
+    role: 'Technical Creator & Instructor',
     featured: true,
-    technologies: [
-      'React.js',
-      'JavaScript (ES6+)',
-      'Node.js',
-      'Express',
-      'MongoDB',
-      'REST APIs'
-    ],
+    technologies: ['TypeScript', 'Interview Prep', 'Open Source'],
     description:
-      'Comprehensive tutorial playlists covering React form handling, state patterns, MERN stack integration, and complete web development workflows.',
+      'A deep-dive video series and repository covering advanced TypeScript concepts, type safety, and common interview questions.',
     responsibilities: [
-      'Recorded multi-part structured video tutorials covering end-to-end full-stack architectures in both Hindi and English.',
-      'Authored deep dives on complex React form validations, hook architectures, and MongoDB API connectivity.',
-      'Mentored thousands of developers in the comments and technical community forum.'
+      'Authored in-depth guides covering generics, mapped types, conditional types, and strict type safety.',
+      'Curated real-world engineering interview scenarios and step-by-step problem-solving tutorials.',
+      'Maintained companion GitHub code repository referenced by candidates preparing for senior engineering roles.'
     ],
     links: [
       {
-        label: 'MERN Stack in Hindi Playlist',
-        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSddUcSRVSf4IBWBPU3zo7Kv',
+        label: 'YouTube Playlist',
+        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucScrsRxbpDBzrjpdwTLsH8Bg',
         type: 'youtube'
       },
       {
-        label: 'MERN Stack in English Playlist',
-        url: 'http://www.youtube.com/playlist?list=PLqQyE6QNucSdn3cejSHce-T9QMEP8JcQk',
+        label: 'GitHub Repo',
+        url: 'https://github.com/AshutoshChoubey/TypeScript-Interview-Preparation-Series',
+        type: 'github'
+      }
+    ]
+  },
+  {
+    id: 'proj-rxjs-tutorials',
+    title: 'RxJS Tutorials',
+    category: 'tutorial',
+    categoryLabel: 'Video Series & Open Source',
+    organization: 'WorldGyan (@worldgyan)',
+    role: 'Technical Creator & Instructor',
+    featured: true,
+    technologies: ['RxJS', 'Angular', 'Reactive Programming'],
+    description:
+      'Comprehensive guide to reactive programming in Angular using RxJS, covering observables, subjects, and operators.',
+    responsibilities: [
+      'Produced detailed video tutorials explaining higher-order mapping operators (switchMap, mergeMap, concatMap, exhaustMap).',
+      'Demonstrated reactive state management, error handling, cancellation, and multicasting patterns in Angular.',
+      'Published open-source example repositories showcasing practical real-world RxJS patterns.'
+    ],
+    links: [
+      {
+        label: 'YouTube Playlist',
+        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSdxVbiveK1J-JfN4JOJH6AV',
         type: 'youtube'
       },
       {
-        label: 'Complex React Form (Hindi)',
-        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucScLssc2dlNS66BJm3m_bRu4',
+        label: 'GitHub Repo',
+        url: 'https://github.com/AshutoshChoubey/rxjs',
+        type: 'github'
+      }
+    ]
+  },
+  {
+    id: 'proj-js-interview',
+    title: 'JavaScript Interview Questions & Advance JavaScript',
+    category: 'tutorial',
+    categoryLabel: 'Video Series & Open Source',
+    organization: 'WorldGyan (@worldgyan)',
+    role: 'Technical Creator & Instructor',
+    featured: true,
+    technologies: ['JavaScript', 'ES6+', 'Interview Prep'],
+    description:
+      'Extensive resources covering core, advanced, and interview-level JavaScript concepts including closures, prototypes, and async programming.',
+    responsibilities: [
+      'Created multi-part playlists covering event loops, execution contexts, prototype chains, and asynchronous JavaScript.',
+      'Authored comprehensive question banks covering tricky JavaScript edge cases and algorithmic concepts.',
+      'Open-sourced companion GitHub repository with reproducible code snippets and explanations.'
+    ],
+    links: [
+      {
+        label: 'Advance JS Playlist',
+        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSdD0l2TWbTj0NEBd_3WZQ7w',
         type: 'youtube'
       },
       {
-        label: 'Complex React Form (English)',
-        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSfrj9IjoeegyoVMsyX5Xd7B',
+        label: 'Interview JS Playlist',
+        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSfNZVhAw-AMY0GS7wAZgecs',
+        type: 'youtube'
+      },
+      {
+        label: 'GitHub Repo',
+        url: 'https://github.com/AshutoshChoubey/JavaScript-Interview-Questions',
+        type: 'github'
+      }
+    ]
+  },
+  {
+    id: 'proj-angular-masterclass',
+    title: 'Angular Masterclass Series (v10 & v13)',
+    category: 'tutorial',
+    categoryLabel: 'Video Masterclass Series',
+    organization: 'WorldGyan (@worldgyan)',
+    role: 'Technical Creator & Instructor',
+    featured: true,
+    technologies: ['Angular 10', 'Angular 13', 'Authentication', 'Frontend Architecture'],
+    description:
+      'End-to-end tutorials on Angular framework features, authentication flows, and version migrations (covering Angular 10 through 13).',
+    responsibilities: [
+      'Recorded comprehensive course modules explaining Angular module architecture, lifecycle hooks, and dependency injection.',
+      'Engineered authentication flow guides implementing HTTP interceptors, route guards, and token refresh logic.',
+      'Demonstrated smooth version migration techniques and modern architectural patterns across Angular releases.'
+    ],
+    links: [
+      {
+        label: 'Angular 13 Series',
+        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSeXrIEWDzSCQBRPsurIc4l7',
+        type: 'youtube'
+      },
+      {
+        label: 'Angular 10 Series',
+        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucScw_yJ78Fmd09sQ6GWGwuGb',
+        type: 'youtube'
+      },
+      {
+        label: 'Angular 10 Auth',
+        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucScXrLlKxX6VeKBHJA79LokD',
         type: 'youtube'
       }
     ]
   },
   {
-    id: 'proj-angular-mastery-series',
-    title: 'Angular Mastery & Advanced Architecture Series',
+    id: 'proj-html-course',
+    title: 'HTML Essential Course',
     category: 'tutorial',
-    categoryLabel: 'WorldGyan Video Series',
+    categoryLabel: 'Video Course',
     organization: 'WorldGyan (@worldgyan)',
-    role: 'Content Creator & Instructor',
-    featured: true,
-    technologies: [
-      'Angular (v10–19)',
-      'TypeScript',
-      'RxJS Operators',
-      'NgRx State Management',
-      'Angular Signals',
-      'Unit Testing'
-    ],
+    role: 'Technical Creator & Instructor',
+    technologies: ['HTML5', 'Web Standards', 'UI/UX'],
     description:
-      'Extensive collection of tutorials ranging from basic authentication and unit testing to advanced RxJS operators (SwitchMap, MergeMap, ForkJoin), Change Detection, and NgRx state management across Angular versions 10 through 19.',
+      'A foundational web development course focusing on modern HTML5 standards, semantic web, and accessibility.',
     responsibilities: [
-      'Produced in-depth architectural guides on Angular Standalone Components, Signal primitives, and high-performance reactive UI patterns.',
-      'Created specialized playlists for Angular 10, Angular 12, Angular 13, and Angular 19.',
-      'Authored guides on authentication lifecycle, route guards, interceptors, and automated testing.'
+      'Taught core principles of semantic markup, accessible document outlines, and forms.',
+      'Guided aspiring developers through responsive design basics and modern web standards.',
+      'Fostered a community of self-taught developers through video guides and feedback.'
     ],
     links: [
       {
-        label: 'Complete Angular Mastery Playlist',
-        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSdbXFScSNlfqQ5ny0V3hNvf',
+        label: 'YouTube Playlist',
+        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSf6z4OMEYH2_MO8xo4Umnu7',
         type: 'youtube'
-      },
+      }
+    ]
+  },
+  {
+    id: 'proj-shopify-series',
+    title: 'Shopify Video Series',
+    category: 'tutorial',
+    categoryLabel: 'Video Series',
+    organization: 'WorldGyan (@worldgyan)',
+    role: 'Technical Creator & Instructor',
+    technologies: ['Shopify', 'E-commerce', 'Liquid'],
+    description:
+      'Step-by-step guide to e-commerce development and store management using the Shopify platform.',
+    responsibilities: [
+      'Covered store setup, theme customization, and product management workflows.',
+      'Explained Liquid templating engine basics and integration with custom styles.',
+      'Mentored e-commerce entrepreneurs on store performance and checkout optimizations.'
+    ],
+    links: [
       {
-        label: 'Visit Official WorldGyan Channel',
-        url: 'https://www.youtube.com/@worldgyan',
+        label: 'YouTube Playlist',
+        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSfHLuBD6jyvmeJqSll7LSuI',
+        type: 'youtube'
+      }
+    ]
+  },
+  {
+    id: 'proj-additional-web-series',
+    title: 'Additional Web Development Series',
+    category: 'tutorial',
+    categoryLabel: 'Video Series',
+    organization: 'WorldGyan (@worldgyan)',
+    role: 'Technical Creator & Instructor',
+    technologies: ['Web Development', 'Tutorials'],
+    description:
+      'Additional web development tutorials, architectural guides, and implementation walkthroughs.',
+    responsibilities: [
+      'Authored tutorials covering full-stack concepts, responsive layout tricks, and modern toolchains.',
+      'Engaged with viewers through Q&A discussions and live problem-solving sessions.'
+    ],
+    links: [
+      {
+        label: 'YouTube Playlist',
+        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSfTfh2A-TXnRjE9xYNvCfAN',
         type: 'youtube'
       }
     ]
