@@ -110,6 +110,20 @@ export class ProfileStateService {
           (s.content as any)?.items?.some((c: any) => c.company?.includes('NTCS'))
       );
 
+    const hasModernTech =
+      saved &&
+      Array.isArray(saved) &&
+      saved.some(
+        (s) =>
+          s.type === 'experience' &&
+          (s.content as any)?.items?.some(
+            (c: any) =>
+              c.company?.includes('NetTantra') &&
+              c.technologies?.some((t: string) => t.toLowerCase().includes('node')) &&
+              !c.technologies?.some((t: string) => t.toLowerCase().includes('php'))
+          )
+      );
+
     if (
       saved &&
       Array.isArray(saved) &&
@@ -117,7 +131,8 @@ export class ProfileStateService {
       !isOldPlaceholder &&
       hasWorldGyanDetails &&
       hasCertLinks &&
-      hasAllProjectDetails
+      hasAllProjectDetails &&
+      hasModernTech
     ) {
       this._sections.set(saved);
     } else {

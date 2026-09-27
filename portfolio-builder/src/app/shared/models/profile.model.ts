@@ -269,11 +269,11 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
           endDate: 'Sep 2019',
           current: false,
           role: 'Angular Developer',
-          roleProjectText: 'Angular Developer | Client: Insight Retail Software Inc',
-          technologies: ['Angular 7', 'TypeScript', 'RxJS', 'POS Hardware Integration', 'Responsive UI'],
+          roleProjectText: 'Angular Developer | Client: Insight Retail Software Inc | Project: Retail POS',
+          technologies: ['Angular 7', 'TypeScript', 'Node.js', 'RxJS', 'REST APIs', 'HTML5/SCSS'],
           bullets: [
-            'Built responsive cross-platform retail POS single-page applications using Angular and TypeScript.',
-            'Designed 15+ reusable UI components with responsive touch interactions optimized for diverse tablet and POS hardware form factors.'
+            'Developed cross-platform retail point-of-sale applications using Angular 7, and NodeJS, enhancing UI responsiveness and improving user experience in collaboration with QA/UX teams.',
+            'Optimized 15+ responsive UI components for various screen sizes and collaborated closely with QA and UX teams to resolve UI/UX defects.'
           ]
         },
         {
@@ -283,44 +283,43 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
           startDate: 'Oct 2018',
           endDate: 'May 2019',
           current: false,
-          role: 'Sr. Software Developer / Full Stack Developer',
-          roleProjectText: 'Sr. Software Developer / Full Stack Developer | Project: Stock Management System (Client: B.C Mohanty & Sons Pvt. Ltd.)',
-          technologies: ['Angular 7', 'TypeScript', 'RxJS', 'JavaScript', 'Node.js', 'Electron JS', 'HTML/SCSS'],
+          role: 'Senior Software Developer',
+          roleProjectText: 'Senior Software Developer | Client: B.C. Mohanty and Sons Pvt. Ltd. | Project: Stock Management System',
+          technologies: ['Angular 7', 'TypeScript', 'RxJS', 'Node.js', 'Electron JS', 'REST APIs', 'HTML5/SCSS'],
           bullets: [
-            'Developed a comprehensive system for managing the client’s Product, Purchase, Indent Report, Requisition Report, Sale, Stock, and GST.',
-            'Led Frontend development in Angular 7 and Backend API development in Node.js, managing an 8-member engineering team.',
-            'Created a Desktop Application using Electron JS.'
+            'Led 5 developer team building Angular 7/Node.js stock management app, achieving 90% on-time delivery while resolving 25 production bugs.',
+            'Delivered desktop and web solutions that eliminated manual stock tracking processes, reducing processing time and errors for warehouse operations.',
+            'Coordinated sprint planning, task allocation, and code reviews across a team of five, maintaining consistent quality throughout the project lifecycle.'
           ]
         },
         {
           id: 'exp-5',
           company: 'NetTantra Technology Pvt. Ltd.',
           location: 'Bhubaneswar, India',
-          startDate: 'Apr 2018',
+          startDate: 'Mar 2018',
           endDate: 'Oct 2018',
           current: false,
           role: 'Application Developer',
-          roleProjectText: 'Application Developer | Project: e-Doctor Clinic (Client: Karma Healthcare, India)',
-          technologies: ['Angular 5', 'TypeScript', 'RxJS', 'JavaScript', 'jQuery', 'Ajax', 'PHP (CodeIgniter)', 'HTML', 'CSS'],
+          roleProjectText: 'Application Developer | Client: Karma Healthcare | Project: e-Doctor Platform',
+          technologies: ['Angular 5', 'TypeScript', 'RxJS', 'Node.js', 'REST APIs', 'Web APIs', 'HTML5', 'CSS3'],
           bullets: [
-            'Developed a web-based telemedicine application connecting rural patients with urban doctors via remote video conferencing (Team Size: 10).',
-            'Managed patient records, prescriptions, payment reconciliations, and doctor information.',
-            'Handled functional testing, database management, and bug life cycle resolution.'
+            'Enhanced a patient-doctor consultation platform using Angular 5 and Node.js, improving user engagement and reducing consultation wait times.',
+            'Automated data validation workflows and improved API error handling, resulting in a 25% reduction in support tickets.'
           ]
         },
         {
           id: 'exp-6',
-          company: 'NTCS India Pvt. Ltd.',
+          company: 'NTCS (India) Pvt. Ltd.',
           location: 'Berhampur, India',
           startDate: 'May 2017',
-          endDate: 'Apr 2018',
+          endDate: 'Mar 2018',
           current: false,
           role: 'Software Engineer',
-          roleProjectText: 'Software Engineer | Projects: OIS & Sankalp Wiki',
-          technologies: ['JavaScript', 'jQuery', 'Ajax', 'PHP', 'HTML', 'CSS', 'MySQL'],
+          roleProjectText: 'Software Engineer | Client: NIST | Project: Online Information System',
+          technologies: ['JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'REST APIs', 'Web APIs', 'Responsive Design'],
           bullets: [
-            'OIS (Client: N.I.S.T, Berhampur): Developed an innovative educational services platform connecting students, teachers, parents, and management (Team Size: 8; SIS & Work Log Entry).',
-            'Sankalp Wiki (Client: Sankalp Semiconductor): Developed an internal employee management system, focusing heavily on building the employee leave module (Team Size: 7).'
+            'Built responsive web interfaces using HTML5, CSS3, and JavaScript, ensuring cross-device compatibility and measurable improvements in user satisfaction scores.',
+            'Documented and enforced frontend coding standards across the team, reducing release defects and improving long-term code maintainability for the project.'
           ]
         }
       ]

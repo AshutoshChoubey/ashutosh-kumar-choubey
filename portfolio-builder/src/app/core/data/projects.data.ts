@@ -91,75 +91,80 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     title: 'Stock Management System',
     category: 'enterprise',
     categoryLabel: 'Enterprise ERP & Inventory',
-    client: 'B.C Mohanty & Sons Pvt. Ltd.',
+    client: 'B.C. Mohanty and Sons Pvt. Ltd.',
     organization: 'Phoenix Software Solutions',
-    role: 'Sr. Software Developer / Full Stack Developer',
+    role: 'Senior Software Developer',
     duration: 'Oct 2018 – May 2019',
-    teamSize: '8 (Managed the team)',
+    teamSize: '5 Developers (Led Team)',
     featured: true,
     technologies: [
       'Angular 7',
       'TypeScript',
       'RxJS',
-      'JavaScript',
       'Node.js',
       'Electron JS',
-      'HTML/SCSS'
+      'REST APIs',
+      'HTML5/SCSS'
     ],
     description:
       'Comprehensive warehouse inventory management desktop and web application digitizing warehouse stock audits, procurement, and tax reporting.',
     responsibilities: [
-      'Developed a comprehensive system for managing the client’s Product, Purchase, Indent Report, Requisition Report, Sale, Stock, and GST.',
-      'Led Frontend development in Angular 7 and Backend API development in Node.js.',
-      'Created a Desktop Application using Electron JS.'
+      'Led 5 developer team building Angular 7/Node.js stock management app, achieving 90% on-time delivery while resolving 25 production bugs.',
+      'Delivered desktop and web solutions that eliminated manual stock tracking processes, reducing processing time and errors for warehouse operations.',
+      'Coordinated sprint planning, task allocation, and code reviews across a team of five, maintaining consistent quality throughout the project lifecycle.'
     ]
   },
   {
     id: 'proj-edoctor',
-    title: 'e-Doctor Clinic (Telemedicine Platform)',
+    title: 'e-Doctor Platform (Telemedicine)',
     category: 'enterprise',
     categoryLabel: 'Healthcare & Telemedicine',
-    client: 'Karma Healthcare, India',
+    client: 'Karma Healthcare',
     organization: 'NetTantra Technology Pvt. Ltd.',
     role: 'Application Developer',
-    duration: 'Apr 10, 2018 – Oct 2018',
-    teamSize: '10',
+    duration: 'Mar 2018 – Oct 2018',
+    teamSize: '10 Developers',
     technologies: [
       'Angular 5',
       'TypeScript',
       'RxJS',
-      'JavaScript',
-      'jQuery',
-      'Ajax',
-      'PHP (CodeIgniter)',
-      'HTML',
-      'CSS'
+      'Node.js',
+      'REST APIs',
+      'Web APIs',
+      'HTML5',
+      'CSS3'
     ],
     description:
       'Web-based telemedicine consultation application connecting rural patients with urban doctors via remote video conferencing and real-time medical logs.',
     responsibilities: [
-      'Developed a web-based telemedicine application connecting rural patients with urban doctors via remote video conferencing.',
-      'Managed patient records, prescriptions, payment reconciliations, and doctor information.',
-      'Handled functional testing, database management, and bug life cycle resolution.'
+      'Enhanced a patient-doctor consultation platform using Angular 5 and Node.js, improving user engagement and reducing consultation wait times.',
+      'Automated data validation workflows and improved API error handling, resulting in a 25% reduction in support tickets.'
     ]
   },
   {
     id: 'proj-ois',
-    title: 'OIS (Online Information System)',
+    title: 'Online Information System (OIS)',
     category: 'enterprise',
     categoryLabel: 'Education & Institutional ERP',
-    client: 'N.I.S.T, Berhampur',
-    organization: 'NTCS India Pvt. Ltd.',
+    client: 'NIST',
+    organization: 'NTCS (India) Pvt. Ltd.',
     role: 'Software Engineer',
     duration: 'May 2017 – Mar 2018',
-    teamSize: '8',
-    technologies: ['JavaScript', 'jQuery', 'Ajax', 'PHP', 'HTML', 'CSS', 'MySQL'],
+    teamSize: '8 Developers',
+    technologies: [
+      'JavaScript',
+      'TypeScript',
+      'HTML5',
+      'CSS3',
+      'REST APIs',
+      'Web APIs',
+      'Responsive Design'
+    ],
     description:
       'Innovative campus educational services platform connecting students, teachers, parents, and administrative management through centralized academic workflows.',
     responsibilities: [
-      'Developed an innovative educational services platform connecting students, teachers, parents, and management.',
-      'Implemented the Student Information System and Work Log Entry modules.',
-      'Collaborated within an 8-member engineering squad to conduct database schema designs and user permission hierarchies.'
+      'Built responsive web interfaces using HTML5, CSS3, and JavaScript, ensuring cross-device compatibility and measurable improvements in user satisfaction scores.',
+      'Documented and enforced frontend coding standards across the team, reducing release defects and improving long-term code maintainability for the project.'
     ]
   },
   {
@@ -168,11 +173,11 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     category: 'enterprise',
     categoryLabel: 'Corporate Intranet & HRMS',
     client: 'Sankalp Semiconductor',
-    organization: 'NTCS India Pvt. Ltd.',
+    organization: 'NTCS (India) Pvt. Ltd.',
     role: 'Software Developer',
     duration: 'Jan 2018 – Apr 2018',
-    teamSize: '7',
-    technologies: ['JavaScript', 'jQuery', 'Ajax', 'PHP', 'HTML', 'CSS'],
+    teamSize: '7 Developers',
+    technologies: ['JavaScript', 'HTML5', 'CSS3', 'REST APIs', 'Web APIs'],
     description:
       'Internal corporate knowledgebase and HR portal streamlining employee records, leave administration, and internal policy documentation.',
     responsibilities: [
@@ -183,20 +188,27 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
   },
   {
     id: 'proj-insight-retail',
-    title: 'Insight Retail POS Platform',
+    title: 'Retail POS Platform',
     category: 'enterprise',
     categoryLabel: 'Retail & Point of Sale',
     client: 'Insight Retail Software Inc',
     organization: 'Navigators Software Pvt. Ltd.',
     role: 'Angular Developer',
     duration: 'May 2019 – Sep 2019',
-    technologies: ['Angular 7', 'TypeScript', 'RxJS', 'POS Hardware Integration', 'Responsive UI'],
+    technologies: [
+      'Angular 7',
+      'TypeScript',
+      'RxJS',
+      'Node.js',
+      'POS Hardware Integration',
+      'HTML5/SCSS',
+      'Responsive UI'
+    ],
     description:
       'Cross-platform retail point-of-sale single-page application optimized for hardware touch displays and barcode terminal peripherals.',
     responsibilities: [
-      'Built responsive cross-platform retail POS single-page applications using Angular and TypeScript.',
-      'Designed 15+ reusable UI components with responsive touch interactions optimized for diverse tablet and POS hardware form factors.',
-      'Optimized cart checkout transaction latency and integrated local caching for offline network tolerance.'
+      'Developed cross-platform retail point-of-sale applications using Angular 7, and NodeJS, enhancing UI responsiveness and improving user experience in collaboration with QA/UX teams.',
+      'Optimized 15+ responsive UI components for various screen sizes and collaborated closely with QA and UX teams to resolve UI/UX defects.'
     ]
   },
 
