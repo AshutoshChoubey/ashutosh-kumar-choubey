@@ -486,24 +486,72 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     ]
   },
   {
-    id: 'proj-additional-web-series',
-    title: 'Additional Web Development Series',
+    id: 'proj-angular-testing',
+    title: 'Angular Unit Testing (TestBed, Jasmine & Karma)',
     category: 'tutorial',
-    categoryLabel: 'Video Series',
+    categoryLabel: 'Video Masterclass Series',
     organization: 'WorldGyan (@worldgyan)',
-    role: 'Technical Creator & Instructor',
-    technologies: ['Web Development', 'Tutorials'],
+    role: 'Technical Creator & Test Architect',
+    featured: true,
+    technologies: [
+      'Angular TestBed',
+      'Jasmine',
+      'Karma',
+      'ComponentFixture',
+      'Spies & Mocks',
+      'HttpTestingController',
+      'Code Coverage (95%+)'
+    ],
     description:
-      'Additional web development tutorials, architectural guides, and implementation walkthroughs.',
+      'A comprehensive masterclass video series and architectural guide on enterprise Angular unit testing. Covers testing components, asynchronous services, observables, custom pipes, and directives using Angular TestBed, Jasmine assertions, spies, mocks, and the Karma test runner to elevate automated code coverage.',
     responsibilities: [
-      'Authored tutorials covering full-stack concepts, responsive layout tricks, and modern toolchains.',
-      'Engaged with viewers through Q&A discussions and live problem-solving sessions.'
+      'Authored structured video tutorials walking developers through Angular TestBed configuration, ComponentFixture lifecycle, DebugElement DOM querying, and change detection triggering.',
+      'Demonstrated isolated and integration testing for asynchronous RxJS observable streams, HTTP services with HttpTestingController, and error-handling interceptors.',
+      'Showcased Jasmine spy methodologies (spyOn, jasmine.createSpyObj), fakeAsync/tick, and async/whenStable patterns for deterministic asynchronous test suites.',
+      'Formulated test automation best practices and Karma headless test runner integration to enforce release quality gates and eliminate regressions.'
     ],
     links: [
       {
-        label: 'YouTube Playlist',
-        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSfTfh2A-TXnRjE9xYNvCfAN',
+        label: 'Angular Testing Playlist (YouTube)',
+        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSfUIpucL_nx7vDuwAa1A_VH',
         type: 'youtube'
+      }
+    ]
+  },
+  {
+    id: 'proj-garage-management',
+    title: 'Garage Management Software',
+    category: 'tutorial',
+    categoryLabel: 'Full-Stack Software & Architecture',
+    organization: 'WorldGyan (@worldgyan)',
+    role: 'Lead Full Stack Developer & System Architect',
+    featured: true,
+    technologies: [
+      'Angular',
+      'Full-Stack Architecture',
+      'System Architecture',
+      'Database Design',
+      'REST APIs',
+      'Local System Setup'
+    ],
+    description:
+      'A full-fledged enterprise-grade Garage Management Software system engineered end-to-end as a Full Stack Developer and System Architect. Covers complete business operations including job cards, customer management, inventory control, service records, and billing workflows. Accompanied by a comprehensive video showcase and local system setup guide (in Hindi).',
+    responsibilities: [
+      'Architected and developed the full-stack software application from scratch, designing the frontend, backend APIs, relational database schema, and operational workflows.',
+      'Built core automotive workshop modules: vehicle job cards, technician allocation, parts inventory tracking, repair logs, and invoice generation.',
+      'Authored an in-depth video showcase and local deployment walkthrough ("Setting Up Garage Management Software on Your Local System - Step-by-Step Guide" in Hindi) demonstrating end-to-end setup and operation.',
+      'Packaged the complete application source files, configuration manifests, and database schemas accessible for educational and learning purposes via Google Drive.'
+    ],
+    links: [
+      {
+        label: 'Watch Project Demo & Setup Guide (Hindi)',
+        url: 'https://youtu.be/B0H-QhKv6Ak?si=R2CHZs4cXV2FUSb1',
+        type: 'youtube'
+      },
+      {
+        label: 'Download Software Package (Educational Use)',
+        url: 'https://drive.google.com/file/d/1fvHAC8olqvnpjHUemZti4yalw_sQFm8C/view?usp=sharing',
+        type: 'download'
       }
     ]
   },
