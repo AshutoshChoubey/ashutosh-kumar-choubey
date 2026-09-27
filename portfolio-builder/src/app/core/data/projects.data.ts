@@ -6,8 +6,8 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     id: 'proj-devshop',
     title: 'Google DevShop (Enterprise Developer Portal)',
     category: 'enterprise',
-    categoryLabel: 'Enterprise On-Site Delivery',
-    client: 'Google LLC (On-site Project)',
+    categoryLabel: 'Enterprise Client Delivery',
+    client: 'Google LLC',
     organization: 'GlobalLogic India Pvt. Ltd.',
     role: 'Senior Software Engineer & Frontend Lead',
     duration: 'Jan 2022 – Present',
@@ -22,7 +22,7 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
       'Micro-frontends'
     ],
     description:
-      'Mission-critical developer enterprise portal designed for Google engineers and external partners, delivered on-site for Google LLC via GlobalLogic India Pvt. Ltd., streamlining project access, service discovery, and workflow automation.',
+      'Mission-critical developer enterprise portal designed for Google engineers and external partners, streamlining project access, service discovery, and workflow automation.',
     responsibilities: [
       'Architect enterprise frontend solutions utilizing Angular 18/19 and TypeScript, designing reactive workflows with RxJS and NgRx state management.',
       'Lead and mentor a squad of frontend engineers on clean architectural patterns, TypeScript best practices, and performance profiling.',
@@ -34,8 +34,8 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     id: 'proj-bss-bam',
     title: 'BSS BAM (Fault Management & Topology Visualization)',
     category: 'enterprise',
-    categoryLabel: 'Enterprise On-Site Delivery',
-    client: 'Ericsson Inc (On-site Project)',
+    categoryLabel: 'Enterprise Client Delivery',
+    client: 'Ericsson Inc',
     organization: 'GlobalLogic India Pvt. Ltd.',
     role: 'Senior Software Engineer & Frontend Lead',
     duration: 'Jan 2022 – Present',
@@ -50,7 +50,7 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
       'Helm Charts'
     ],
     description:
-      'Telecommunications network topology and fault management ecosystem facilitating live cluster health diagnostics and automated incident resolution, delivered on-site for Ericsson Inc via GlobalLogic India Pvt. Ltd.',
+      'Telecommunications network topology and fault management ecosystem facilitating live cluster health diagnostics and automated incident resolution.',
     responsibilities: [
       'Architected Fault Management Systems and Network Topology visualization tools from the ground up using Angular 14–16 and TypeScript.',
       'Designed and decoupled 2 micro-frontend modules within a distributed microservices ecosystem to facilitate independent squad deployments.',
@@ -307,43 +307,6 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
 
   // 📺 YouTube Series & Open Source Contributions (WorldGyan)
   {
-    id: 'proj-garage-management',
-    title: 'Setting Up Garage Management Software on Your Local System - Step-by-Step Guide (Hindi)',
-    category: 'tutorial',
-    categoryLabel: 'Video Guide & Educational Release',
-    organization: 'WorldGyan (@worldgyan)',
-    role: 'Technical Creator & System Architect',
-    featured: true,
-    technologies: [
-      'Garage Management System',
-      'Local Server Setup',
-      'Database Configuration',
-      'Full-Stack Architecture',
-      'Educational Project'
-    ],
-    note: 'Notice: Currently, this project and its source package are available for educational purposes.',
-    description:
-      'A comprehensive step-by-step Hindi video walkthrough detailing how to install, configure, and execute a full-featured Garage Management Software system on a local workstation environment. Currently, this project is available for educational purposes.',
-    responsibilities: [
-      'Authored an end-to-end video tutorial in Hindi guiding developers through local environment prerequisites, local server installation, and database imports.',
-      'Configured and demonstrated core garage management modules including vehicle job cards, service tracking, parts inventory, and billing.',
-      'Packaged and published complete project files and database templates accessible via Google Drive for educational purposes.',
-      'Provided step-by-step troubleshooting instructions for database connection parameters, server ports, and local file permissions.'
-    ],
-    links: [
-      {
-        label: 'Watch Step-by-Step Video (YouTube)',
-        url: 'https://youtu.be/B0H-QhKv6Ak?si=R2CHZs4cXV2FUSb1',
-        type: 'youtube'
-      },
-      {
-        label: 'Download Project Files (Educational Use)',
-        url: 'https://drive.google.com/file/d/1fvHAC8olqvnpjHUemZti4yalw_sQFm8C/view?usp=sharing',
-        type: 'download'
-      }
-    ]
-  },
-  {
     id: 'proj-ts-prep',
     title: 'TypeScript Interview Preparation Series',
     category: 'tutorial',
@@ -516,24 +479,39 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     ]
   },
   {
-    id: 'proj-additional-web-series',
-    title: 'Additional Web Development Series',
+    id: 'proj-garage-management',
+    title: 'Setting Up Garage Management Software on Your Local System - Step-by-Step Guide (Hindi)',
     category: 'tutorial',
-    categoryLabel: 'Video Series',
+    categoryLabel: 'Video Guide & Educational Release',
     organization: 'WorldGyan (@worldgyan)',
-    role: 'Technical Creator & Instructor',
-    technologies: ['Web Development', 'Tutorials'],
+    role: 'Technical Creator & System Architect',
+    featured: true,
+    technologies: [
+      'Garage Management System',
+      'Local Server Setup',
+      'Database Configuration',
+      'Full-Stack Architecture',
+      'Educational Project'
+    ],
+    note: 'Notice: Currently, this project and its source package are available for educational purposes.',
     description:
-      'Additional web development tutorials, architectural guides, and implementation walkthroughs.',
+      'A comprehensive step-by-step Hindi video walkthrough detailing how to install, configure, and execute a full-featured Garage Management Software system on a local workstation environment. Currently, this project is available for educational purposes.',
     responsibilities: [
-      'Authored tutorials covering full-stack concepts, responsive layout tricks, and modern toolchains.',
-      'Engaged with viewers through Q&A discussions and live problem-solving sessions.'
+      'Authored an end-to-end video tutorial in Hindi guiding developers through local environment prerequisites, local server installation, and database imports.',
+      'Configured and demonstrated core garage management modules including vehicle job cards, service tracking, parts inventory, and billing.',
+      'Packaged and published complete project files and database templates accessible via Google Drive for educational purposes.',
+      'Provided step-by-step troubleshooting instructions for database connection parameters, server ports, and local file permissions.'
     ],
     links: [
       {
-        label: 'YouTube Playlist',
-        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSfTfh2A-TXnRjE9xYNvCfAN',
+        label: 'Watch Step-by-Step Video (YouTube)',
+        url: 'https://youtu.be/B0H-QhKv6Ak?si=R2CHZs4cXV2FUSb1',
         type: 'youtube'
+      },
+      {
+        label: 'Download Project Files (Educational Use)',
+        url: 'https://drive.google.com/file/d/1fvHAC8olqvnpjHUemZti4yalw_sQFm8C/view?usp=sharing',
+        type: 'download'
       }
     ]
   },
