@@ -175,9 +175,7 @@ export class Landing implements OnInit {
     await this.exportService.downloadPdf(el, `ashutosh_kumar_choubey_9+_years_of_exteriance_senior_frontened_engineer.pdf`);
   }
 
-  downloadDoc(): void {
-    const rawName = this.heroContent().fullName || 'Ashutosh_Kumar_Choubey';
-    const cleanName = rawName.trim().replace(/[^a-zA-Z0-9_-]/g, '_');
+    downloadDoc(): void {
     this.exportService.downloadDoc(
       {
         hero: this.heroContent(),
@@ -188,7 +186,22 @@ export class Landing implements OnInit {
         education: this.educationContent(),
         certifications: this.certificationsContent()
       },
-      `ashutosh_kumar_choubey_9+_years_of_exteriance_senior_frontened_engineer.doc`
+      'ashutosh_kumar_choubey_9+_years_of_exteriance_senior_frontened_engineer.doc'
+    );
+  }
+
+  downloadDocx(): void {
+    this.exportService.downloadDocx(
+      {
+        hero: this.heroContent(),
+        about: this.aboutContent(),
+        skills: this.skillsContent(),
+        experience: this.experienceContent(),
+        contentCreation: this.contentCreation(),
+        education: this.educationContent(),
+        certifications: this.certificationsContent()
+      },
+      'ashutosh_kumar_choubey_9+_years_of_exteriance_senior_frontened_engineer.docx'
     );
   }
 

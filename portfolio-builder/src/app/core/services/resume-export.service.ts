@@ -248,6 +248,7 @@ export class ResumeExportService {
    * Generates and downloads an ATS-compliant, well-styled Microsoft Word (.doc) document.
    * Formatted with MSO Word XML namespaces, page setup, tables, fonts, and hyperlinks.
    */
+  
   downloadDoc(data: ResumeExportData, fileName = 'Ashutosh_Kumar_Choubey_Resume.doc'): void {
     if (!isPlatformBrowser(this.platformId)) return;
 
@@ -273,6 +274,36 @@ export class ResumeExportService {
       this.isGeneratingDoc.set(false);
     }
   }
+
+  downloadDocx(data: ResumeExportData, fileName = 'Ashutosh_Kumar_Choubey_Resume.docx'): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    // Use same generating state to show spinner
+    this.isGeneratingDoc.set(true);
+
+    try {
+      const htmlContent = this.buildWordDocumentHtml(data);
+      const blob = new Blob(['\ufeff' + htmlContent], {
+        // Technically this is HTML, but many systems accept it this way.
+        // We'll use the ms-word MIME type so it opens correctly.
+        type: 'application/msword;charset=utf-8'
+      });
+
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error('Failed to generate Word document:', err);
+    } finally {
+      this.isGeneratingDoc.set(false);
+    }
+  }
+
 
   /**
    * Triggers the native browser print dialog with print-optimized stylesheets.
