@@ -480,36 +480,37 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
   },
   {
     id: 'proj-garage-management',
-    title: 'Setting Up Garage Management Software on Your Local System - Step-by-Step Guide (Hindi)',
+    title: 'Garage Management Software',
     category: 'tutorial',
-    categoryLabel: 'Video Guide & Educational Release',
+    categoryLabel: 'Full-Stack Software & Architecture',
     organization: 'WorldGyan (@worldgyan)',
-    role: 'Technical Creator & System Architect',
+    role: 'Lead Full Stack Developer & System Architect',
     featured: true,
     technologies: [
-      'Garage Management System',
-      'Local Server Setup',
-      'Database Configuration',
+      'Angular',
       'Full-Stack Architecture',
-      'Educational Project'
+      'System Architecture',
+      'Database Design',
+      'REST APIs',
+      'Local System Setup'
     ],
-    note: 'Notice: Currently, this project and its source package are available for educational purposes.',
+    note: 'Notice: Currently, this software project and source package are available for educational purposes.',
     description:
-      'A comprehensive step-by-step Hindi video walkthrough detailing how to install, configure, and execute a full-featured Garage Management Software system on a local workstation environment. Currently, this project is available for educational purposes.',
+      'A full-fledged enterprise-grade Garage Management Software system engineered end-to-end as a Full Stack Developer and System Architect. Covers complete business operations including job cards, customer management, inventory control, service records, and billing workflows. Accompanied by a comprehensive video showcase and local system setup guide.',
     responsibilities: [
-      'Authored an end-to-end video tutorial in Hindi guiding developers through local environment prerequisites, local server installation, and database imports.',
-      'Configured and demonstrated core garage management modules including vehicle job cards, service tracking, parts inventory, and billing.',
-      'Packaged and published complete project files and database templates accessible via Google Drive for educational purposes.',
-      'Provided step-by-step troubleshooting instructions for database connection parameters, server ports, and local file permissions.'
+      'Architected and developed the full-stack software application from scratch, designing the frontend, backend APIs, relational database schema, and operational workflows.',
+      'Built core automotive workshop modules: vehicle job cards, technician allocation, parts inventory tracking, repair logs, and invoice generation.',
+      'Authored an in-depth video showcase and local deployment walkthrough ("Setting Up Garage Management Software on Your Local System - Step-by-Step Guide" in Hindi) demonstrating end-to-end setup and operation.',
+      'Packaged the complete application source files, configuration manifests, and database schemas accessible for educational and learning purposes via Google Drive.'
     ],
     links: [
       {
-        label: 'Watch Step-by-Step Video (YouTube)',
+        label: 'Watch Project Demo & Setup Guide (Hindi)',
         url: 'https://youtu.be/B0H-QhKv6Ak?si=R2CHZs4cXV2FUSb1',
         type: 'youtube'
       },
       {
-        label: 'Download Project Files (Educational Use)',
+        label: 'Download Software Package (Educational Use)',
         url: 'https://drive.google.com/file/d/1fvHAC8olqvnpjHUemZti4yalw_sQFm8C/view?usp=sharing',
         type: 'download'
       }
