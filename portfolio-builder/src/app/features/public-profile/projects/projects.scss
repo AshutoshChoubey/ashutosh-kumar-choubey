@@ -797,7 +797,9 @@
       margin: 0 0 0.5rem;
     }
 
-    p {
+    p,
+    .cta-subtitle {
+      display: none !important; // Hidden per user request, retained in template
       color: #cbd5e1;
       font-size: 0.925rem;
       margin: 0 auto 1.5rem;

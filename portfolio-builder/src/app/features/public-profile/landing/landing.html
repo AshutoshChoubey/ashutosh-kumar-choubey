@@ -1,7 +1,7 @@
 <!-- Top Floating Action Bar (Hidden during Print) -->
 <nav class="action-topbar">
   <div class="topbar-inner">
-    <div class="brand-badge">
+    <div class="brand-badge" style="display: none !important;">
       <span class="pulse-indicator"></span>
       <span class="brand-label">Professional Resume View</span>
     </div>
@@ -79,28 +79,31 @@
         <span>Project Details</span>
       </a>
 
-      @if (isAuthenticated()) {
-        <a routerLink="/builder" class="btn-topbar btn-studio" title="Manage portfolio in builder">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="7" height="7"></rect>
-            <rect x="14" y="3" width="7" height="7"></rect>
-            <rect x="14" y="14" width="7" height="7"></rect>
-            <rect x="3" y="14" width="7" height="7"></rect>
-          </svg>
-          <span>Builder Studio</span>
-        </a>
-        <button type="button" class="btn-topbar btn-logout" (click)="logout()" title="Sign out of admin session">
-          Sign Out
-        </button>
-      } @else {
-        <a routerLink="/login" class="btn-topbar btn-login" title="Admin access to builder">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          <span>Admin Login</span>
-        </a>
-      }
+      <!-- Admin Login Option (Hidden visually per user request, retained in template) -->
+      <div class="admin-auth-actions" style="display: none !important;">
+        @if (isAuthenticated()) {
+          <a routerLink="/builder" class="btn-topbar btn-studio" title="Manage portfolio in builder">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Builder Studio</span>
+          </a>
+          <button type="button" class="btn-topbar btn-logout" (click)="logout()" title="Sign out of admin session">
+            Sign Out
+          </button>
+        } @else {
+          <a routerLink="/login" class="btn-topbar btn-login" title="Admin access to builder">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span>Admin Login</span>
+          </a>
+        }
+      </div>
     </div>
   </div>
 </nav>
@@ -544,7 +547,8 @@
   <!-- Bottom Resume Export & Print Bar (Hidden during Print) -->
   <footer class="resume-footer-bar">
     <div class="footer-bar-inner">
-      <div class="footer-info">
+      <!-- Direct Download Headline & Subtext (Hidden visually per user request, retained in template) -->
+      <div class="footer-info" style="display: none !important;">
         <span class="footer-icon">📄</span>
         <div>
           <div class="footer-headline">Looking for a copy for review or application?</div>
