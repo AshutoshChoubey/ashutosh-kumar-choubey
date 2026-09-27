@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const domain = 'https://me.worldgyan.com';
-const outDir = path.join(__dirname, '../../docs');
+const domain = 'https://ashutoshchoubey.github.io';
+const outDir = path.join(__dirname, '../docs');
 const sitemapPath = path.join(outDir, 'sitemap.xml');
 const robotsPath = path.join(outDir, 'robots.txt');
 

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://me.worldgyan.com/</loc>
+    <loc>https://ashutoshchoubey.github.io/</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://me.worldgyan.com/projects</loc>
+    <loc>https://ashutoshchoubey.github.io/projects</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://me.worldgyan.com/login</loc>
+    <loc>https://ashutoshchoubey.github.io/login</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://me.worldgyan.com/builder</loc>
+    <loc>https://ashutoshchoubey.github.io/builder</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

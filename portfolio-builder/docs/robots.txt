@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://me.worldgyan.com/sitemap.xml
+Sitemap: https://ashutoshchoubey.github.io/sitemap.xml

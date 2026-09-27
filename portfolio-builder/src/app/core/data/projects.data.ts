@@ -244,6 +244,7 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     role: 'Full Stack Developer / Creator',
     technologies: ['MongoDB', 'Express.js', 'React', 'Node.js'],
     featured: true,
+    isPreAI: true,
     description:
       'A standalone full-stack application leveraging the complete MERN ecosystem for high-performance data handling.',
     responsibilities: [
@@ -267,6 +268,7 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     role: 'Full Stack Developer & Educator',
     technologies: ['React', 'Django', 'Python', 'REST API', 'CRUD'],
     featured: true,
+    isPreAI: true,
     description:
       'A seamless full-stack application demonstrating cross-framework integration with a Python backend and a React frontend.',
     responsibilities: [
