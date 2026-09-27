@@ -67,6 +67,18 @@
         <span>Print</span>
       </button>
 
+      <!-- Dedicated Project Details Page Link -->
+      <a
+        routerLink="/projects"
+        class="btn-topbar btn-projects"
+        title="View in-depth case studies, open source repositories, and video tutorials"
+      >
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        <span>Project Details</span>
+      </a>
+
       @if (isAuthenticated()) {
         <a routerLink="/builder" class="btn-topbar btn-studio" title="Manage portfolio in builder">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -275,6 +287,9 @@
       <div class="section-title-wrap">
         <span class="section-accent-bar bar-teal"></span>
         <h2 class="section-title">{{ experienceSection()?.title || 'Work Experience' }}</h2>
+        <a routerLink="/projects" class="section-more-link" title="Explore complete project directory and live repositories">
+          <span>Project Details & Code &rarr;</span>
+        </a>
       </div>
 
       @for (exp of experienceContent().items; track exp.id) {
@@ -578,6 +593,15 @@
           <span class="btn-icon">🖨️</span>
           <span>Print</span>
         </button>
+
+        <a
+          routerLink="/projects"
+          class="btn-footer btn-footer-projects"
+          title="View comprehensive project case studies and source code"
+        >
+          <span class="btn-icon">🚀</span>
+          <span>Project Details</span>
+        </a>
       </div>
     </div>
   </footer>

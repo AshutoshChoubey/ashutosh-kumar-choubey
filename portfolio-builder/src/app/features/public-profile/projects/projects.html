@@ -1,0 +1,305 @@
+<!-- Top Navigation Bar -->
+<header class="projects-navbar">
+  <div class="navbar-container">
+    <div class="navbar-left">
+      <a routerLink="/" class="back-link" title="Return to single-page ATS resume">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Back to Resume</span>
+      </a>
+      <div class="nav-divider"></div>
+      <div class="candidate-meta">
+        <span class="candidate-name">{{ heroContent().fullName }}</span>
+        <span class="candidate-tagline">{{ heroContent().tagline }}</span>
+      </div>
+    </div>
+
+    <div class="navbar-right">
+      @if (heroContent().githubUrl) {
+        <a [href]="heroContent().githubUrl" target="_blank" rel="noopener noreferrer" class="nav-icon-link" title="GitHub Profile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          <span class="link-label">GitHub</span>
+        </a>
+      }
+      @if (heroContent().youtubeUrl) {
+        <a [href]="heroContent().youtubeUrl" target="_blank" rel="noopener noreferrer" class="nav-icon-link nav-youtube" title="WorldGyan YouTube Channel">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          <span class="link-label">WorldGyan</span>
+        </a>
+      }
+      @if (heroContent().linkedinUrl) {
+        <a [href]="heroContent().linkedinUrl" target="_blank" rel="noopener noreferrer" class="nav-icon-link" title="LinkedIn Profile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+          <span class="link-label">LinkedIn</span>
+        </a>
+      }
+      <a routerLink="/" class="btn-resume-cta">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+        </svg>
+        <span>View Resume</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="projects-main">
+  <!-- Hero Section -->
+  <section class="projects-hero">
+    <div class="hero-content-wrap">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span>Engineering Portfolio & Project Directory</span>
+      </div>
+      <h1 class="hero-title">Detailed Projects & Technical Case Studies</h1>
+      <p class="hero-subtitle">
+        Architectural breakdowns, production deliverables, open-source repositories, and tutorial playlists spanning 9+ years of engineering experience across Google, Ericsson, Codeclouds, Phoenix, NetTantra, NTCS, and WorldGyan.
+      </p>
+
+      <!-- Stat Badges Row -->
+      <div class="hero-stats-row">
+        <div class="stat-card">
+          <span class="stat-num">{{ totalProjectsCount() }}</span>
+          <span class="stat-desc">Total Projects</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">{{ enterpriseCount() }}</span>
+          <span class="stat-desc">Enterprise Deliverables</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">{{ openSourceCount() }}</span>
+          <span class="stat-desc">Open-Source Repos</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">{{ videoSeriesCount() }}</span>
+          <span class="stat-desc">Masterclass Series</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Controls: Search & Category Filter Bar -->
+  <section class="projects-controls-container">
+    <div class="controls-inner">
+      <!-- Search Input -->
+      <div class="search-box">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search by project name, tech (e.g. Angular, Node, React, Docker), client, role..."
+          [ngModel]="searchQuery()"
+          (ngModelChange)="updateSearch($event)"
+        />
+        @if (searchQuery()) {
+          <button class="search-clear-btn" (click)="updateSearch('')" title="Clear search">
+            &times;
+          </button>
+        }
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="category-filters-row">
+        @for (cat of categories(); track cat.id) {
+          <button
+            type="button"
+            class="cat-filter-btn"
+            [class.active]="activeCategory() === cat.id"
+            (click)="setCategory(cat.id)"
+          >
+            <span class="cat-icon">{{ cat.icon }}</span>
+            <span class="cat-label">{{ cat.label }}</span>
+            <span class="cat-count-badge">{{ cat.count }}</span>
+          </button>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects List Section -->
+  <section class="projects-grid-section">
+    <div class="grid-container">
+      <div class="results-header">
+        <span class="results-count">
+          Showing <strong>{{ filteredProjects().length }}</strong> of <strong>{{ allProjects().length }}</strong> projects
+        </span>
+        @if (activeCategory() !== 'all' || searchQuery()) {
+          <button type="button" class="btn-reset-filters" (click)="clearFilters()">
+            Clear Filters
+          </button>
+        }
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="projects-grid">
+        @for (project of filteredProjects(); track project.id) {
+          <article class="project-card" [class.featured-card]="project.featured">
+            <!-- Top Card Header -->
+            <div class="card-header">
+              <div class="card-badges">
+                <span class="category-pill" [ngClass]="getCategoryBadgeClass(project.category)">
+                  {{ project.categoryLabel }}
+                </span>
+                @if (project.featured) {
+                  <span class="featured-badge">★ Featured</span>
+                }
+              </div>
+              @if (project.duration) {
+                <span class="duration-badge">{{ project.duration }}</span>
+              }
+            </div>
+
+            <!-- Title & Role -->
+            <h3 class="project-title">{{ project.title }}</h3>
+            <div class="project-role-bar">
+              <span class="role-title">{{ project.role }}</span>
+            </div>
+
+            <!-- Metadata Meta Chips -->
+            <div class="meta-chips-row">
+              @if (project.client) {
+                <div class="meta-chip client-chip">
+                  <span class="chip-label">Client:</span>
+                  <span class="chip-val">{{ project.client }}</span>
+                </div>
+              }
+              @if (project.organization && project.organization !== project.client) {
+                <div class="meta-chip org-chip">
+                  <span class="chip-label">Company:</span>
+                  <span class="chip-val">{{ project.organization }}</span>
+                </div>
+              }
+              @if (project.teamSize) {
+                <div class="meta-chip team-chip">
+                  <span class="chip-label">Team:</span>
+                  <span class="chip-val">{{ project.teamSize }}</span>
+                </div>
+              }
+            </div>
+
+            <!-- Description -->
+            @if (project.description) {
+              <p class="project-description">{{ project.description }}</p>
+            }
+
+            <!-- Rounded Technology Pill Tags -->
+            <div class="tech-stack-wrap">
+              <span class="tech-section-label">Tools & Technologies:</span>
+              <div class="tech-tags-list">
+                @for (tech of project.technologies; track tech; let idx = $index) {
+                  <span class="tech-tag" [ngClass]="getTechnologyColorClass(idx)">
+                    {{ tech }}
+                  </span>
+                }
+              </div>
+            </div>
+
+            <!-- Responsibilities & Highlights -->
+            @if (project.responsibilities && project.responsibilities.length > 0) {
+              <div class="responsibilities-block">
+                <span class="responsibilities-title">Key Responsibilities & Deliverables:</span>
+                <ul class="responsibilities-list">
+                  @for (resp of project.responsibilities; track resp) {
+                    <li>{{ resp }}</li>
+                  }
+                </ul>
+              </div>
+            }
+
+            <!-- External Links / Action Buttons -->
+            @if (project.links && project.links.length > 0) {
+              <div class="project-links-footer">
+                @for (link of project.links; track link.url) {
+                  <a
+                    [href]="link.url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link-btn"
+                    [class.link-youtube]="link.type === 'youtube'"
+                    [class.link-github]="link.type === 'github'"
+                  >
+                    @if (link.type === 'github') {
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                      </svg>
+                    } @else if (link.type === 'youtube') {
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                      </svg>
+                    } @else {
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                    }
+                    <span>{{ link.label }}</span>
+                  </a>
+                }
+              </div>
+            }
+          </article>
+        }
+      </div>
+
+      <!-- Empty State -->
+      @if (filteredProjects().length === 0) {
+        <div class="empty-state">
+          <div class="empty-icon">🔍</div>
+          <h3 class="empty-title">No projects matched your criteria</h3>
+          <p class="empty-desc">
+            Try adjusting your search keywords or switching to a different category filter.
+          </p>
+          <button type="button" class="btn-clear-empty" (click)="clearFilters()">
+            Clear Filters & View All Projects
+          </button>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Bottom CTA Footer -->
+  <footer class="projects-footer">
+    <div class="footer-container">
+      <div class="footer-cta-card">
+        <h3>Interested in Architectural Collaboration or Hiring?</h3>
+        <p>
+          Explore the concise ATS-friendly single-page resume or get in direct contact.
+        </p>
+        <div class="footer-actions">
+          <a routerLink="/" class="btn-footer-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+            <span>View Full Resume</span>
+          </a>
+          @if (heroContent().email) {
+            <a [href]="'mailto:' + heroContent().email" class="btn-footer-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>Email: {{ heroContent().email }}</span>
+            </a>
+          }
+        </div>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2026 Ashutosh Kumar Choubey &bull; All Rights Reserved &bull; Built with Angular 22</p>
+      </div>
+    </div>
+  </footer>
+</main>

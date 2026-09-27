@@ -101,13 +101,23 @@ export class ProfileStateService {
           (s.content as any)?.items?.some((c: any) => c.url?.includes('credly'))
       );
 
+    const hasAllProjectDetails =
+      saved &&
+      Array.isArray(saved) &&
+      saved.some(
+        (s) =>
+          s.type === 'experience' &&
+          (s.content as any)?.items?.some((c: any) => c.company?.includes('NTCS'))
+      );
+
     if (
       saved &&
       Array.isArray(saved) &&
       saved.length > 0 &&
       !isOldPlaceholder &&
       hasWorldGyanDetails &&
-      hasCertLinks
+      hasCertLinks &&
+      hasAllProjectDetails
     ) {
       this._sections.set(saved);
     } else {

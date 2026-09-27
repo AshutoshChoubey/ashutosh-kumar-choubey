@@ -247,18 +247,18 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
         },
         {
           id: 'exp-2',
-          company: 'CodeClouds IT Solution Pvt. Ltd.',
+          company: 'Codeclouds IT Solution Pvt. Ltd.',
           location: 'Kolkata, India',
           startDate: 'Sep 2019',
           endDate: 'Dec 2021',
           current: false,
-          role: 'Senior Frontend Developer',
-          roleProjectText: 'Senior Frontend Developer | Enterprise CRM Platform',
-          technologies: ['Angular 10', 'TypeScript', 'Node.js', 'REST APIs', 'Agile'],
+          role: 'Sr. Software Developer (Team Lead & Client Facing)',
+          roleProjectText: 'Sr. Software Developer (Team Lead) | Project: Unify Platform (Company Product)',
+          technologies: ['Angular 8', 'TypeScript', 'RxJS', 'JavaScript (ES6+)', 'Node.js', 'Web APIs', 'HTML5/CSS3'],
           bullets: [
-            'Refactored legacy monolith modules into maintainable, high-throughput Angular and TypeScript applications.',
-            'Delivered 12 consecutive enterprise milestone releases ahead of schedule through precise requirement refinement and sprint ownership.',
-            'Engineered optimized data integration layers connecting multi-channel customer data to internal CRM backends via RESTful APIs.'
+            'Led Frontend development in Angular 8 and Backend API development using Node.js.',
+            'Connected E-commerce site to CRM using Web APIs.',
+            'Understood client requirements, delegated tasks among team members, and provided technical support.'
           ]
         },
         {
@@ -270,7 +270,7 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
           current: false,
           role: 'Angular Developer',
           roleProjectText: 'Angular Developer | Client: Insight Retail Software Inc',
-          technologies: ['Angular 7', 'TypeScript', 'POS Systems', 'Responsive UI'],
+          technologies: ['Angular 7', 'TypeScript', 'RxJS', 'POS Hardware Integration', 'Responsive UI'],
           bullets: [
             'Built responsive cross-platform retail POS single-page applications using Angular and TypeScript.',
             'Designed 15+ reusable UI components with responsive touch interactions optimized for diverse tablet and POS hardware form factors.'
@@ -283,27 +283,44 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
           startDate: 'Oct 2018',
           endDate: 'May 2019',
           current: false,
-          role: 'Software Developer',
-          roleProjectText: 'Software Developer | Warehouse Stock Management System',
-          technologies: ['Angular 7', 'TypeScript', 'Inventory Architecture'],
+          role: 'Sr. Software Developer / Full Stack Developer',
+          roleProjectText: 'Sr. Software Developer / Full Stack Developer | Project: Stock Management System (Client: B.C Mohanty & Sons Pvt. Ltd.)',
+          technologies: ['Angular 7', 'TypeScript', 'RxJS', 'JavaScript', 'Node.js', 'Electron JS', 'HTML/SCSS'],
           bullets: [
-            'Led a 5-developer engineering team delivering an Angular and TypeScript warehouse inventory tracking system with 90%+ on-time milestone delivery.',
-            'Digitized manual inventory counting workflows, eliminating paper-based reporting delays and stock discrepancy rates.'
+            'Developed a comprehensive system for managing the client’s Product, Purchase, Indent Report, Requisition Report, Sale, Stock, and GST.',
+            'Led Frontend development in Angular 7 and Backend API development in Node.js, managing an 8-member engineering team.',
+            'Created a Desktop Application using Electron JS.'
           ]
         },
         {
           id: 'exp-5',
           company: 'NetTantra Technology Pvt. Ltd.',
           location: 'Bhubaneswar, India',
-          startDate: 'May 2017',
+          startDate: 'Apr 2018',
           endDate: 'Oct 2018',
           current: false,
           role: 'Application Developer',
-          roleProjectText: 'Application Developer | Telemedicine Platform',
-          technologies: ['Angular 5', 'TypeScript', 'SCSS', 'HTML5'],
+          roleProjectText: 'Application Developer | Project: e-Doctor Clinic (Client: Karma Healthcare, India)',
+          technologies: ['Angular 5', 'TypeScript', 'RxJS', 'JavaScript', 'jQuery', 'Ajax', 'PHP (CodeIgniter)', 'HTML', 'CSS'],
           bullets: [
-            'Engineered responsive telemedicine consultation portals using Angular and TypeScript for Karma Healthcare, decreasing user-reported onboarding issues by 25%.',
-            'Implemented accessible, cross-browser web interfaces with HTML5, CSS3/SCSS, and modern JavaScript adhering to strict frontend compliance standards.'
+            'Developed a web-based telemedicine application connecting rural patients with urban doctors via remote video conferencing (Team Size: 10).',
+            'Managed patient records, prescriptions, payment reconciliations, and doctor information.',
+            'Handled functional testing, database management, and bug life cycle resolution.'
+          ]
+        },
+        {
+          id: 'exp-6',
+          company: 'NTCS India Pvt. Ltd.',
+          location: 'Berhampur, India',
+          startDate: 'May 2017',
+          endDate: 'Apr 2018',
+          current: false,
+          role: 'Software Engineer',
+          roleProjectText: 'Software Engineer | Projects: OIS & Sankalp Wiki',
+          technologies: ['JavaScript', 'jQuery', 'Ajax', 'PHP', 'HTML', 'CSS', 'MySQL'],
+          bullets: [
+            'OIS (Client: N.I.S.T, Berhampur): Developed an innovative educational services platform connecting students, teachers, parents, and management (Team Size: 8; SIS & Work Log Entry).',
+            'Sankalp Wiki (Client: Sankalp Semiconductor): Developed an internal employee management system, focusing heavily on building the employee leave module (Team Size: 7).'
           ]
         }
       ]

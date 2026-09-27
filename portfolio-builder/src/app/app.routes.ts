@@ -23,6 +23,17 @@ export const routes: Routes = [
     title: 'Studio Dashboard | Profile Builder'
   },
   {
+    path: 'projects',
+    loadComponent: () =>
+      import('./features/public-profile/projects/projects').then((m) => m.ProjectsComponent),
+    title: 'Detailed Projects & Case Studies | Ashutosh Kumar Choubey'
+  },
+  {
+    path: 'project-details',
+    redirectTo: 'projects',
+    pathMatch: 'full'
+  },
+  {
     path: '**',
     redirectTo: ''
   }
