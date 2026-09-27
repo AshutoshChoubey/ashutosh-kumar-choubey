@@ -433,6 +433,39 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     ]
   },
   {
+    id: 'proj-angular-testing',
+    title: 'Angular Unit Testing (TestBed, Jasmine & Karma)',
+    category: 'tutorial',
+    categoryLabel: 'Video Masterclass Series',
+    organization: 'WorldGyan (@worldgyan)',
+    role: 'Technical Creator & Test Architect',
+    featured: true,
+    technologies: [
+      'Angular TestBed',
+      'Jasmine',
+      'Karma',
+      'ComponentFixture',
+      'Spies & Mocks',
+      'HttpTestingController',
+      'Code Coverage (95%+)'
+    ],
+    description:
+      'A comprehensive masterclass video series and architectural guide on enterprise Angular unit testing. Covers testing components, asynchronous services, observables, custom pipes, and directives using Angular TestBed, Jasmine assertions, spies, mocks, and the Karma test runner to elevate automated code coverage.',
+    responsibilities: [
+      'Authored structured video tutorials walking developers through Angular TestBed configuration, ComponentFixture lifecycle, DebugElement DOM querying, and change detection triggering.',
+      'Demonstrated isolated and integration testing for asynchronous RxJS observable streams, HTTP services with HttpTestingController, and error-handling interceptors.',
+      'Showcased Jasmine spy methodologies (spyOn, jasmine.createSpyObj), fakeAsync/tick, and async/whenStable patterns for deterministic asynchronous test suites.',
+      'Formulated test automation best practices and Karma headless test runner integration to enforce release quality gates and eliminate regressions.'
+    ],
+    links: [
+      {
+        label: 'Angular Testing Playlist (YouTube)',
+        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSfUIpucL_nx7vDuwAa1A_VH',
+        type: 'youtube'
+      }
+    ]
+  },
+  {
     id: 'proj-html-course',
     title: 'HTML Essential Course',
     category: 'tutorial',
