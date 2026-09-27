@@ -307,6 +307,43 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
 
   // 📺 YouTube Series & Open Source Contributions (WorldGyan)
   {
+    id: 'proj-garage-management',
+    title: 'Setting Up Garage Management Software on Your Local System - Step-by-Step Guide (Hindi)',
+    category: 'tutorial',
+    categoryLabel: 'Video Guide & Educational Release',
+    organization: 'WorldGyan (@worldgyan)',
+    role: 'Technical Creator & System Architect',
+    featured: true,
+    technologies: [
+      'Garage Management System',
+      'Local Server Setup',
+      'Database Configuration',
+      'Full-Stack Architecture',
+      'Educational Project'
+    ],
+    note: 'Notice: Currently, this project and its source package are available for educational purposes.',
+    description:
+      'A comprehensive step-by-step Hindi video walkthrough detailing how to install, configure, and execute a full-featured Garage Management Software system on a local workstation environment. Currently, this project is available for educational purposes.',
+    responsibilities: [
+      'Authored an end-to-end video tutorial in Hindi guiding developers through local environment prerequisites, local server installation, and database imports.',
+      'Configured and demonstrated core garage management modules including vehicle job cards, service tracking, parts inventory, and billing.',
+      'Packaged and published complete project files and database templates accessible via Google Drive for educational purposes.',
+      'Provided step-by-step troubleshooting instructions for database connection parameters, server ports, and local file permissions.'
+    ],
+    links: [
+      {
+        label: 'Watch Step-by-Step Video (YouTube)',
+        url: 'https://youtu.be/B0H-QhKv6Ak?si=R2CHZs4cXV2FUSb1',
+        type: 'youtube'
+      },
+      {
+        label: 'Download Project Files (Educational Use)',
+        url: 'https://drive.google.com/file/d/1fvHAC8olqvnpjHUemZti4yalw_sQFm8C/view?usp=sharing',
+        type: 'download'
+      }
+    ]
+  },
+  {
     id: 'proj-ts-prep',
     title: 'TypeScript Interview Preparation Series',
     category: 'tutorial',

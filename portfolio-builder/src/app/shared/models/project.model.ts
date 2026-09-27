@@ -3,7 +3,7 @@ export type ProjectCategory = 'enterprise' | 'opensource' | 'tutorial' | 'academ
 export interface ProjectLink {
   label: string;
   url: string;
-  type: 'github' | 'youtube' | 'web' | 'demo';
+  type: 'github' | 'youtube' | 'web' | 'demo' | 'drive' | 'download';
 }
 
 export interface DetailedProject {
@@ -18,6 +18,7 @@ export interface DetailedProject {
   teamSize?: number | string;
   technologies: string[];
   description?: string;
+  note?: string;
   responsibilities: string[];
   links?: ProjectLink[];
   featured?: boolean;
