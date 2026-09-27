@@ -205,9 +205,9 @@
 
   .hero-stats-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 1rem;
-    max-width: 860px;
+    max-width: 1040px;
     margin: 0 auto;
   }
 
@@ -553,27 +553,6 @@
     }
   }
 
-  .project-note-banner {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    padding: 0.6rem 0.85rem;
-    border-radius: 6px;
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-    color: #1e40af;
-    font-size: 0.82rem;
-    line-height: 1.45;
-    margin-bottom: 0.9rem;
-    font-weight: 500;
-
-    svg {
-      flex-shrink: 0;
-      margin-top: 1px;
-      color: #3b82f6;
-    }
-  }
-
   .project-description {
     font-size: 0.875rem;
     color: var(--text-body);
@@ -736,18 +715,6 @@
 
         &:hover {
           background: #fecaca;
-        }
-      }
-
-      &.link-download,
-      &.link-drive {
-        background: #ecfdf5;
-        color: #065f46;
-        border-color: #6ee7b7;
-
-        &:hover {
-          background: #d1fae5;
-          border-color: #34d399;
         }
       }
     }

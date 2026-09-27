@@ -144,6 +144,19 @@ export class ProfileStateService {
           !(s.content as any)?.summary?.toLowerCase().includes('core web vital')
       );
 
+    const hasOnSiteClient =
+      saved &&
+      Array.isArray(saved) &&
+      saved.some(
+        (s) =>
+          s.type === 'experience' &&
+          (s.content as any)?.items?.some(
+            (c: any) =>
+              c.company?.includes('GlobalLogic') &&
+              c.subProjects?.some((sp: any) => sp.client?.includes('On-site'))
+          )
+      );
+
     if (
       saved &&
       Array.isArray(saved) &&
@@ -154,7 +167,8 @@ export class ProfileStateService {
       hasAllProjectDetails &&
       hasModernTech &&
       hasPrimeNGSkill &&
-      hasCleanSummary
+      hasCleanSummary &&
+      hasOnSiteClient
     ) {
       this._sections.set(saved);
     } else {

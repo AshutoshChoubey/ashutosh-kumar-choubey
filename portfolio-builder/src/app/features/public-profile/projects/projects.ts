@@ -105,6 +105,9 @@ export class ProjectsComponent {
   readonly videoSeriesCount = computed(
     () => this.allProjects().filter((p) => p.category === 'tutorial').length
   );
+  readonly academicCount = computed(
+    () => this.allProjects().filter((p) => p.category === 'academic').length
+  );
 
   setCategory(category: string): void {
     this.activeCategory.set(category);

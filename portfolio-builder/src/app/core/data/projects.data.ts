@@ -6,8 +6,8 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     id: 'proj-devshop',
     title: 'Google DevShop (Enterprise Developer Portal)',
     category: 'enterprise',
-    categoryLabel: 'Enterprise Client Delivery',
-    client: 'Google LLC',
+    categoryLabel: 'Enterprise On-Site Delivery',
+    client: 'Google LLC (On-site Project)',
     organization: 'GlobalLogic India Pvt. Ltd.',
     role: 'Senior Software Engineer & Frontend Lead',
     duration: 'Jan 2022 – Present',
@@ -22,7 +22,7 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
       'Micro-frontends'
     ],
     description:
-      'Mission-critical developer enterprise portal designed for Google engineers and external partners, streamlining project access, service discovery, and workflow automation.',
+      'Mission-critical developer enterprise portal designed for Google engineers and external partners, delivered on-site for Google LLC via GlobalLogic India Pvt. Ltd., streamlining project access, service discovery, and workflow automation.',
     responsibilities: [
       'Architect enterprise frontend solutions utilizing Angular 18/19 and TypeScript, designing reactive workflows with RxJS and NgRx state management.',
       'Lead and mentor a squad of frontend engineers on clean architectural patterns, TypeScript best practices, and performance profiling.',
@@ -34,8 +34,8 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     id: 'proj-bss-bam',
     title: 'BSS BAM (Fault Management & Topology Visualization)',
     category: 'enterprise',
-    categoryLabel: 'Enterprise Client Delivery',
-    client: 'Ericsson Inc',
+    categoryLabel: 'Enterprise On-Site Delivery',
+    client: 'Ericsson Inc (On-site Project)',
     organization: 'GlobalLogic India Pvt. Ltd.',
     role: 'Senior Software Engineer & Frontend Lead',
     duration: 'Jan 2022 – Present',
@@ -50,7 +50,7 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
       'Helm Charts'
     ],
     description:
-      'Telecommunications network topology and fault management ecosystem facilitating live cluster health diagnostics and automated incident resolution.',
+      'Telecommunications network topology and fault management ecosystem facilitating live cluster health diagnostics and automated incident resolution, delivered on-site for Ericsson Inc via GlobalLogic India Pvt. Ltd.',
     responsibilities: [
       'Architected Fault Management Systems and Network Topology visualization tools from the ground up using Angular 14–16 and TypeScript.',
       'Designed and decoupled 2 micro-frontend modules within a distributed microservices ecosystem to facilitate independent squad deployments.',

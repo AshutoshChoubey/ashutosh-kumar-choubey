@@ -218,7 +218,7 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
           technologies: ['Angular 19', 'TypeScript', 'RxJS', 'NgRx', 'Micro-frontends', 'Jasmine', 'Docker'],
           subProjects: [
             {
-              client: 'Google LLC',
+              client: 'Google LLC (On-site Project)',
               project: 'Google DevShop',
               technologies: ['Angular 19', 'TypeScript', 'RxJS', 'NgRx', 'Jasmine', 'Karma'],
               bullets: [
@@ -229,7 +229,7 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
               ]
             },
             {
-              client: 'Ericsson Inc',
+              client: 'Ericsson Inc (On-site Project)',
               project: 'BSS BAM',
               technologies: ['Angular 16', 'TypeScript', 'Micro-frontends', 'Docker', 'Kubernetes', 'Helm'],
               bullets: [

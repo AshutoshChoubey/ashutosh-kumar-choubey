@@ -62,7 +62,7 @@
       </div>
       <h1 class="hero-title">Detailed Projects & Technical Case Studies</h1>
       <p class="hero-subtitle">
-        Architectural breakdowns, production deliverables, open-source repositories, and tutorial playlists spanning 9+ years of engineering experience across Google, Ericsson, Codeclouds, Phoenix, NetTantra, NTCS, and WorldGyan.
+        Architectural breakdowns, production deliverables, open-source repositories, and tutorial playlists spanning 9+ years of engineering experience across GlobalLogic (on-site client engagements for Google LLC and Ericsson), Codeclouds, Phoenix, NetTantra, NTCS, and WorldGyan.
       </p>
 
       <!-- Stat Badges Row -->
@@ -81,7 +81,11 @@
         </div>
         <div class="stat-card">
           <span class="stat-num">{{ videoSeriesCount() }}</span>
-          <span class="stat-desc">Masterclass Series</span>
+          <span class="stat-desc">Video Series & Masterclasses</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">{{ academicCount() }}</span>
+          <span class="stat-desc">Academic & Industrial</span>
         </div>
       </div>
     </div>
@@ -189,18 +193,6 @@
               }
             </div>
 
-            <!-- Optional Educational / Important Note Callout -->
-            @if (project.note) {
-              <div class="project-note-banner">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="16" x2="12" y2="12"></line>
-                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-                <span>{{ project.note }}</span>
-              </div>
-            }
-
             <!-- Description -->
             @if (project.description) {
               <p class="project-description">{{ project.description }}</p>
@@ -241,7 +233,6 @@
                     class="project-link-btn"
                     [class.link-youtube]="link.type === 'youtube'"
                     [class.link-github]="link.type === 'github'"
-                    [class.link-download]="link.type === 'download' || link.type === 'drive'"
                   >
                     @if (link.type === 'github') {
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
@@ -250,12 +241,6 @@
                     } @else if (link.type === 'youtube') {
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                      </svg>
-                    } @else if (link.type === 'download' || link.type === 'drive') {
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
                       </svg>
                     } @else {
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
