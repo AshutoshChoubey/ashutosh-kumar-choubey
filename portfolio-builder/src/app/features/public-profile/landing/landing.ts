@@ -21,6 +21,8 @@ import {
   ProfileSection,
   SkillsContent
 } from '../../../shared/models/profile.model';
+import { SeoService } from '../../../core/services/seo.service';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-landing',
@@ -29,7 +31,7 @@ import {
   templateUrl: './landing.html',
   styleUrls: ['./landing.scss']
 })
-export class Landing {
+export class Landing implements OnInit {
   readonly profileState = inject(ProfileStateService);
   readonly authService = inject(AuthService);
   readonly exportService = inject(ResumeExportService);
@@ -43,6 +45,30 @@ export class Landing {
   readonly sections: Signal<ProfileSection[]> = computed(() =>
     this.profileState.orderedSections()
   );
+
+  readonly seoService = inject(SeoService);
+
+  ngOnInit() {
+    this.seoService.updateSeoTags({
+      title: 'Ashutosh Kumar Choubey | Senior Software Developer Resume',
+      description: 'Senior Software Developer and Angular Architect with 9+ years of experience building scalable enterprise applications. Expertise in Angular, TypeScript, and Node.js.',
+      keywords: 'Ashutosh Kumar Choubey, Angular Architect, Senior Software Developer, TypeScript, Node.js, MERN stack, GlobalLogic, Google DevShop',
+      url: 'https://ashutoshchoubey.github.io/',
+      author: 'Ashutosh Kumar Choubey',
+      schema: {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ashutosh Kumar Choubey",
+        "url": "https://ashutoshchoubey.github.io/",
+        "jobTitle": "Lead Frontend Developer",
+        "sameAs": [
+          "https://linkedin.com/in/ashutosh-kumar-choubey",
+          "https://github.com/AshutoshChoubey",
+          "https://www.youtube.com/@worldgyan"
+        ]
+      }
+    });
+  }
 
   readonly isAuthenticated: Signal<boolean> = computed(() =>
     this.authService.isAuthenticated()

@@ -22,4 +22,6 @@ export interface DetailedProject {
   responsibilities: string[];
   links?: ProjectLink[];
   featured?: boolean;
+  isPreAI?: boolean;
+  legacyNote?: string;
 }

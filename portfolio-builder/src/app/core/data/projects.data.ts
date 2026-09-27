@@ -220,6 +220,7 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     role: 'Full Stack Developer / Creator',
     technologies: ['Angular', 'Node.js', 'Express', 'Authentication', 'JWT'],
     featured: true,
+    isPreAI: true,
     description:
       'A full-stack task management and reporting application built to track daily developer workflows securely.',
     responsibilities: [
@@ -289,6 +290,7 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     role: 'Full Stack Developer / Creator',
     technologies: ['Angular', 'Tax Management', 'Enterprise UI'],
     featured: true,
+    isPreAI: true,
     description:
       'A comprehensive legacy application for managing Goods and Services Tax (GST) data and reporting.',
     responsibilities: [
@@ -315,6 +317,7 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     role: 'Technical Creator & Instructor',
     featured: true,
     technologies: ['TypeScript', 'Interview Prep', 'Open Source'],
+    isPreAI: true,
     description:
       'A deep-dive video series and repository covering advanced TypeScript concepts, type safety, and common interview questions.',
     responsibilities: [
@@ -344,6 +347,7 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     role: 'Technical Creator & Instructor',
     featured: true,
     technologies: ['RxJS', 'Angular', 'Reactive Programming'],
+    isPreAI: true,
     description:
       'Comprehensive guide to reactive programming in Angular using RxJS, covering observables, subjects, and operators.',
     responsibilities: [
@@ -373,6 +377,7 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     role: 'Technical Creator & Instructor',
     featured: true,
     technologies: ['JavaScript', 'ES6+', 'Interview Prep'],
+    isPreAI: true,
     description:
       'Extensive resources covering core, advanced, and interview-level JavaScript concepts including closures, prototypes, and async programming.',
     responsibilities: [
@@ -433,39 +438,6 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     ]
   },
   {
-    id: 'proj-angular-testing',
-    title: 'Angular Unit Testing (TestBed, Jasmine & Karma)',
-    category: 'tutorial',
-    categoryLabel: 'Video Masterclass Series',
-    organization: 'WorldGyan (@worldgyan)',
-    role: 'Technical Creator & Test Architect',
-    featured: true,
-    technologies: [
-      'Angular TestBed',
-      'Jasmine',
-      'Karma',
-      'ComponentFixture',
-      'Spies & Mocks',
-      'HttpTestingController',
-      'Code Coverage (95%+)'
-    ],
-    description:
-      'A comprehensive masterclass video series and architectural guide on enterprise Angular unit testing. Covers testing components, asynchronous services, observables, custom pipes, and directives using Angular TestBed, Jasmine assertions, spies, mocks, and the Karma test runner to elevate automated code coverage.',
-    responsibilities: [
-      'Authored structured video tutorials walking developers through Angular TestBed configuration, ComponentFixture lifecycle, DebugElement DOM querying, and change detection triggering.',
-      'Demonstrated isolated and integration testing for asynchronous RxJS observable streams, HTTP services with HttpTestingController, and error-handling interceptors.',
-      'Showcased Jasmine spy methodologies (spyOn, jasmine.createSpyObj), fakeAsync/tick, and async/whenStable patterns for deterministic asynchronous test suites.',
-      'Formulated test automation best practices and Karma headless test runner integration to enforce release quality gates and eliminate regressions.'
-    ],
-    links: [
-      {
-        label: 'Angular Testing Playlist (YouTube)',
-        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSfUIpucL_nx7vDuwAa1A_VH',
-        type: 'youtube'
-      }
-    ]
-  },
-  {
     id: 'proj-html-course',
     title: 'HTML Essential Course',
     category: 'tutorial',
@@ -512,40 +484,24 @@ export const DETAILED_PROJECTS: DetailedProject[] = [
     ]
   },
   {
-    id: 'proj-garage-management',
-    title: 'Garage Management Software',
+    id: 'proj-additional-web-series',
+    title: 'Additional Web Development Series',
     category: 'tutorial',
-    categoryLabel: 'Full-Stack Software & Architecture',
+    categoryLabel: 'Video Series',
     organization: 'WorldGyan (@worldgyan)',
-    role: 'Lead Full Stack Developer & System Architect',
-    featured: true,
-    technologies: [
-      'Angular',
-      'Full-Stack Architecture',
-      'System Architecture',
-      'Database Design',
-      'REST APIs',
-      'Local System Setup'
-    ],
-    note: 'Notice: Currently, this software project and source package are available for educational purposes.',
+    role: 'Technical Creator & Instructor',
+    technologies: ['Web Development', 'Tutorials'],
     description:
-      'A full-fledged enterprise-grade Garage Management Software system engineered end-to-end as a Full Stack Developer and System Architect. Covers complete business operations including job cards, customer management, inventory control, service records, and billing workflows. Accompanied by a comprehensive video showcase and local system setup guide.',
+      'Additional web development tutorials, architectural guides, and implementation walkthroughs.',
     responsibilities: [
-      'Architected and developed the full-stack software application from scratch, designing the frontend, backend APIs, relational database schema, and operational workflows.',
-      'Built core automotive workshop modules: vehicle job cards, technician allocation, parts inventory tracking, repair logs, and invoice generation.',
-      'Authored an in-depth video showcase and local deployment walkthrough ("Setting Up Garage Management Software on Your Local System - Step-by-Step Guide" in Hindi) demonstrating end-to-end setup and operation.',
-      'Packaged the complete application source files, configuration manifests, and database schemas accessible for educational and learning purposes via Google Drive.'
+      'Authored tutorials covering full-stack concepts, responsive layout tricks, and modern toolchains.',
+      'Engaged with viewers through Q&A discussions and live problem-solving sessions.'
     ],
     links: [
       {
-        label: 'Watch Project Demo & Setup Guide (Hindi)',
-        url: 'https://youtu.be/B0H-QhKv6Ak?si=R2CHZs4cXV2FUSb1',
+        label: 'YouTube Playlist',
+        url: 'https://www.youtube.com/playlist?list=PLqQyE6QNucSfTfh2A-TXnRjE9xYNvCfAN',
         type: 'youtube'
-      },
-      {
-        label: 'Download Software Package (Educational Use)',
-        url: 'https://drive.google.com/file/d/1fvHAC8olqvnpjHUemZti4yalw_sQFm8C/view?usp=sharing',
-        type: 'download'
       }
     ]
   },

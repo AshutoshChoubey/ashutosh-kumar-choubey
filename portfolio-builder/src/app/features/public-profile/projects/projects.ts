@@ -6,6 +6,8 @@ import { DetailedProject, ProjectCategory } from '../../../shared/models/project
 import { DETAILED_PROJECTS } from '../../../core/data/projects.data';
 import { ProfileStateService } from '../../../core/services/profile-state.service';
 import { HeroContent } from '../../../shared/models/profile.model';
+import { SeoService } from '../../../core/services/seo.service';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -14,8 +16,9 @@ import { HeroContent } from '../../../shared/models/profile.model';
   templateUrl: './projects.html',
   styleUrls: ['./projects.scss']
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
   private readonly profileState = inject(ProfileStateService);
+  private readonly seoService = inject(SeoService);
 
   // All source projects
   readonly allProjects = signal<DetailedProject[]>(DETAILED_PROJECTS);
@@ -25,6 +28,27 @@ export class ProjectsComponent {
 
   // Search input query
   readonly searchQuery = signal<string>('');
+
+  ngOnInit() {
+    this.seoService.updateSeoTags({
+      title: 'Detailed Projects & Case Studies | Ashutosh Kumar Choubey',
+      description: 'Explore detailed technical case studies, enterprise deliverables, open-source repositories, and tutorial playlists spanning 9+ years of engineering experience.',
+      keywords: 'Angular projects, Enterprise applications, Open-source repositories, Software architecture, Ashutosh Kumar Choubey, WorldGyan',
+      url: 'https://ashutoshchoubey.github.io/projects',
+      author: 'Ashutosh Kumar Choubey',
+      schema: {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Detailed Projects & Case Studies",
+        "url": "https://ashutoshchoubey.github.io/projects",
+        "author": {
+          "@type": "Person",
+          "name": "Ashutosh Kumar Choubey"
+        },
+        "description": "Portfolio of enterprise deliverables, open-source repositories, and tutorials."
+      }
+    });
+  }
 
   // Hero profile info for branding header
   readonly heroContent: Signal<HeroContent> = computed(() => {
