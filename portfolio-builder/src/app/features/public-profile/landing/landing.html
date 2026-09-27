@@ -91,6 +91,13 @@
           </a>
         }
 
+        @if (heroContent().youtubeUrl) {
+          <a [href]="heroContent().youtubeUrl" target="_blank" rel="noopener noreferrer" class="contact-pill contact-youtube">
+            <span class="pill-icon">▶️</span>
+            <span>YouTube: &#64;worldgyan</span>
+          </a>
+        }
+
         <span class="contact-pill contact-location">
           <span class="pill-icon">📍</span>
           <span>{{ heroContent().location || 'Noida / Bangalore, India' }}</span>
@@ -307,7 +314,14 @@
                 <span class="creator-badge-icon">🎬</span>
                 <span class="company-name">{{ item.role }}</span>
                 <span class="role-separator">&mdash;</span>
-                <span class="role-name creator-channel">{{ item.channelOrPlatform }}</span>
+                @if (item.url) {
+                  <a [href]="item.url" target="_blank" rel="noopener noreferrer" class="creator-channel-link">
+                    {{ item.channelOrPlatform }}
+                    <span class="link-arrow">↗</span>
+                  </a>
+                } @else {
+                  <span class="role-name creator-channel">{{ item.channelOrPlatform }}</span>
+                }
               </div>
               <span class="date-badge-pill date-badge-rose">{{ item.period }}</span>
             </div>
@@ -332,6 +346,16 @@
                 </div>
               </div>
             }
+
+            @if (item.url) {
+              <div class="content-action-row">
+                <a [href]="item.url" target="_blank" rel="noopener noreferrer" class="btn-channel-visit">
+                  <span class="btn-icon">▶️</span>
+                  <span>Visit WorldGyan on YouTube</span>
+                  <span class="btn-arrow">↗</span>
+                </a>
+              </div>
+            }
           </article>
         }
       } @else {
@@ -339,32 +363,46 @@
           <div class="exp-title-row">
             <div class="exp-left-header">
               <span class="creator-badge-icon">🎬</span>
-              <span class="company-name">Technical Creator & Educator</span>
+              <span class="company-name">Founder & Technical Educator</span>
               <span class="role-separator">&mdash;</span>
-              <span class="role-name creator-channel">YouTube & WorldGyan (me.worldgyan.com)</span>
+              <a href="https://www.youtube.com/@worldgyan" target="_blank" rel="noopener noreferrer" class="creator-channel-link">
+                WorldGyan (&#64;worldgyan)
+                <span class="link-arrow">↗</span>
+              </a>
             </div>
             <span class="date-badge-pill date-badge-rose">2020 &ndash; Present</span>
           </div>
 
           <p class="section-paragraph content-desc">
-            Producing educational technical content, architectural deep-dives, and guides for the global frontend developer community.
+            Founder & creator of WorldGyan (&#64;worldgyan), an educational technical YouTube channel and online learning platform (worldgyan.com) dedicated to delivering deep-dive tutorials on Angular, TypeScript, RxJS, and full-stack software development to over 25,000+ developers.
           </p>
 
           <ul class="ats-bullet-list">
-            <li>Produce detailed video tutorials and architectural guides covering modern Angular features (Signals, Standalone Architecture, RxJS state management, and performance tuning).</li>
-            <li>Create hands-on code walkthroughs and open-source GitHub starter repositories referenced by thousands of frontend developers.</li>
-            <li>Conduct community code-review sessions and technical interview preparation workshops focused on enterprise TypeScript and Angular architecture.</li>
+            <li>Produces structured multi-part video tutorial series on Angular (Signals, Standalone Components, RxJS reactive architectures, and NgRx state management), translating complex enterprise patterns into accessible practical lessons.</li>
+            <li>Architects and open-sources production-ready application starter templates and project code repositories on GitHub and worldgyan.com.</li>
+            <li>Delivers end-to-end full-stack software application guides (including management software architectures, server configuration, and RESTful API design).</li>
+            <li>Engages actively with the global developer community through video guides, code reviews, and technical interview preparation sessions.</li>
           </ul>
 
           <div class="tech-tags-wrapper">
             <span class="tech-tag-label">Topics:</span>
             <div class="tech-tag-list">
-              <span class="tech-tag-rounded tech-tag-sm tag-theme-rose">Angular Signals</span>
-              <span class="tech-tag-rounded tech-tag-sm tag-theme-rose">Standalone Architecture</span>
-              <span class="tech-tag-rounded tech-tag-sm tag-theme-rose">RxJS</span>
+              <span class="tech-tag-rounded tech-tag-sm tag-theme-rose">Angular (v14–19)</span>
               <span class="tech-tag-rounded tech-tag-sm tag-theme-rose">TypeScript</span>
-              <span class="tech-tag-rounded tech-tag-sm tag-theme-rose">Video Production</span>
+              <span class="tech-tag-rounded tech-tag-sm tag-theme-rose">RxJS</span>
+              <span class="tech-tag-rounded tech-tag-sm tag-theme-rose">NgRx</span>
+              <span class="tech-tag-rounded tech-tag-sm tag-theme-rose">Full-Stack Architecture</span>
+              <span class="tech-tag-rounded tech-tag-sm tag-theme-rose">REST APIs</span>
+              <span class="tech-tag-rounded tech-tag-sm tag-theme-rose">Web Development</span>
             </div>
+          </div>
+
+          <div class="content-action-row">
+            <a href="https://www.youtube.com/@worldgyan" target="_blank" rel="noopener noreferrer" class="btn-channel-visit">
+              <span class="btn-icon">▶️</span>
+              <span>Visit WorldGyan on YouTube</span>
+              <span class="btn-arrow">↗</span>
+            </a>
           </div>
         </article>
       }
@@ -413,46 +451,24 @@
       <section class="resume-section">
         <div class="section-title-wrap">
           <span class="section-accent-bar bar-emerald"></span>
-          <h2 class="section-title">Certifications & Credentials</h2>
+          <h2 class="section-title">Certifications</h2>
         </div>
         <div class="cert-grid">
           @for (cert of certificationsContent().items; track cert.id) {
-            <article class="cert-card">
-              <div class="cert-header-row">
-                <div class="cert-title-wrap">
-                  <span class="cert-badge-icon">🏅</span>
-                  @if (cert.url) {
-                    <a [href]="cert.url" target="_blank" rel="noopener noreferrer" class="cert-title cert-title-link">
-                      <span>{{ cert.title }}</span>
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                      </svg>
-                    </a>
-                  } @else {
-                    <span class="cert-title">{{ cert.title }}</span>
-                  }
-                </div>
-                <span class="date-badge-pill">{{ cert.year }}</span>
-              </div>
-
-              <div class="cert-meta-row">
-                <span class="cert-issuer-badge" [class]="getIssuerBadgeClass(cert.issuer)">
-                  {{ cert.issuer }}
-                </span>
-
-                @if (cert.credentialId) {
-                  <span class="cert-id-tag">ID: {{ cert.credentialId }}</span>
-                }
-
+            <div class="cert-card">
+              <span class="cert-icon">📜</span>
+              <div class="cert-info">
                 @if (cert.url) {
-                  <a [href]="cert.url" target="_blank" rel="noopener noreferrer" class="cert-verify-link">
-                    Verify Credential ↗
+                  <a [href]="cert.url" target="_blank" rel="noopener noreferrer" class="cert-title-link">
+                    {{ cert.title }}
+                    <span class="link-arrow">↗</span>
                   </a>
+                } @else {
+                  <div class="cert-title">{{ cert.title }}</div>
                 }
+                <div class="cert-issuer">{{ cert.issuer }} &bull; {{ cert.year }}</div>
               </div>
-            </article>
+            </div>
           }
         </div>
       </section>

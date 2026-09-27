@@ -83,20 +83,14 @@ export class ProfileStateService {
             (s.content as any)?.fullName?.includes('Vance'))
       );
 
-    const hasReactOrPlaceholder =
+    const hasWorldGyanDetails =
       saved &&
       Array.isArray(saved) &&
-      saved.some((s) => {
-        const text = JSON.stringify(s).toLowerCase();
-        return (
-          text.includes('react') ||
-          text.includes('copilot') ||
-          text.includes('gemini')
-        );
-      });
-
-    const hasContentSection =
-      saved && Array.isArray(saved) && saved.some((s) => s.type === 'content');
+      saved.some(
+        (s) =>
+          s.type === 'content' &&
+          (s.content as any)?.items?.some((c: any) => c.url?.includes('youtube.com/@worldgyan'))
+      );
 
     const hasCertLinks =
       saved &&
@@ -112,8 +106,7 @@ export class ProfileStateService {
       Array.isArray(saved) &&
       saved.length > 0 &&
       !isOldPlaceholder &&
-      !hasReactOrPlaceholder &&
-      hasContentSection &&
+      hasWorldGyanDetails &&
       hasCertLinks
     ) {
       this._sections.set(saved);

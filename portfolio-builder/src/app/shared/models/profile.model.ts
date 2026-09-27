@@ -14,6 +14,7 @@ export interface HeroContent {
   email?: string;
   linkedinUrl?: string;
   githubUrl?: string;
+  youtubeUrl?: string;
   websiteUrl?: string;
   location?: string;
   bio?: string;
@@ -112,7 +113,6 @@ export interface CertificationItem {
   issuer: string;
   year: string;
   url?: string;
-  credentialId?: string;
 }
 
 export interface CertificationsContent {
@@ -157,6 +157,7 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
       email: 'ashutoshkumarchoubey@gmail.com',
       linkedinUrl: 'https://linkedin.com/in/ashutosh-kumar-choubey',
       githubUrl: 'https://github.com/AshutoshChoubey',
+      youtubeUrl: 'https://www.youtube.com/@worldgyan',
       websiteUrl: 'https://me.worldgyan.com',
       location: 'Noida / Bangalore, India',
       bio: 'Senior Frontend Developer & Angular Specialist with 9+ years of experience architecting high-performance enterprise web applications and leading frontend engineering teams.'
@@ -317,17 +318,27 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
       items: [
         {
           id: 'content-1',
-          title: 'Angular & TypeScript Deep Dives',
-          channelOrPlatform: 'YouTube & WorldGyan (me.worldgyan.com)',
-          role: 'Technical Creator & Educator',
-          url: 'https://me.worldgyan.com',
+          title: 'Angular, TypeScript & Full-Stack Architecture Tutorials',
+          channelOrPlatform: 'WorldGyan (@worldgyan)',
+          role: 'Founder & Technical Educator',
+          url: 'https://www.youtube.com/@worldgyan',
           period: '2020 – Present',
-          description: 'Producing educational technical content and architectural deep-dives for the global frontend developer community.',
-          technologies: ['Angular Signals', 'Standalone Architecture', 'RxJS', 'TypeScript', 'Video Production'],
+          description:
+            'Founder & creator of WorldGyan (@worldgyan), an educational technical YouTube channel and online learning platform (worldgyan.com) dedicated to delivering deep-dive tutorials on Angular, TypeScript, RxJS, and full-stack software development to over 25,000+ developers.',
+          technologies: [
+            'Angular (v14–19)',
+            'TypeScript',
+            'RxJS',
+            'NgRx',
+            'Full-Stack Architecture',
+            'REST APIs',
+            'Web Development'
+          ],
           bullets: [
-            'Produce detailed video tutorials and architectural guides covering modern Angular features (Signals, Standalone Architecture, RxJS state management, and performance tuning).',
-            'Create hands-on code walkthroughs and open-source GitHub starter repositories referenced by thousands of frontend developers.',
-            'Conduct community code-review sessions and technical interview preparation workshops focused on enterprise TypeScript and Angular architecture.'
+            'Produces structured multi-part video tutorial series on Angular (Signals, Standalone Components, RxJS reactive architectures, and NgRx state management), translating complex enterprise patterns into accessible practical lessons.',
+            'Architects and open-sources production-ready application starter templates and project code repositories on GitHub and worldgyan.com.',
+            'Delivers end-to-end full-stack software application guides (including management software architectures, server configuration, and RESTful API design).',
+            'Engages actively with the global developer community through video guides, code reviews, and technical interview preparation sessions.'
           ]
         }
       ]
@@ -362,24 +373,21 @@ export const DEFAULT_PROFILE_SECTIONS: ProfileSection[] = [
           title: 'AWS Certified Solutions Architect – Associate',
           issuer: 'Amazon Web Services',
           year: '2025',
-          url: 'https://www.credly.com/badges/c3bfe5db-65ef-418c-a0a2-237a7fabefae',
-          credentialId: 'c3bfe5db-65ef-418c-a0a2-237a7fabefae'
+          url: 'https://www.credly.com/badges/c3bfe5db-65ef-418c-a0a2-237a7fabefae'
         },
         {
           id: 'cert-2',
           title: 'Angular – The Complete Guide (2021 Edition)',
           issuer: 'Udemy',
           year: '2021',
-          url: 'https://www.udemy.com/certificate/UC-2b57992f-aff5-42c1-88c7-c9e9da0497fb/',
-          credentialId: 'UC-2b57992f-aff5-42c1-88c7-c9e9da0497fb'
+          url: 'https://www.udemy.com/certificate/UC-2b57992f-aff5-42c1-88c7-c9e9da0497fb/'
         },
         {
           id: 'cert-3',
           title: 'Certified AI Professional',
           issuer: 'GlobalLogic',
           year: '2026',
-          url: 'https://glx.globallogic.com/certify/6c3d6223-d349-4ea6-828e-a4dee7fc6a65',
-          credentialId: '6c3d6223-d349-4ea6-828e-a4dee7fc6a65'
+          url: 'https://glx.globallogic.com/certify/6c3d6223-d349-4ea6-828e-a4dee7fc6a65'
         }
       ]
     } as CertificationsContent
