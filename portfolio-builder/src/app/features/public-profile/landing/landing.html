@@ -7,13 +7,64 @@
     </div>
 
     <div class="topbar-actions">
-      <button type="button" class="btn-topbar btn-print" (click)="printResume()" title="Print or Save as PDF">
+      <!-- Download PDF Button (Structured conversion, not browser print) -->
+      <button
+        type="button"
+        class="btn-topbar btn-pdf"
+        (click)="downloadPdf()"
+        [disabled]="isGeneratingPdf()"
+        title="Download structured, ATS-compliant PDF document"
+      >
+        @if (isGeneratingPdf()) {
+          <span class="btn-spinner"></span>
+          <span>Generating PDF...</span>
+        } @else {
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="12" y1="18" x2="12" y2="12"></line>
+            <polyline points="9 15 12 18 15 15"></polyline>
+          </svg>
+          <span>Download PDF</span>
+        }
+      </button>
+
+      <!-- Print / Save in DOC Button (Word format .doc) -->
+      <button
+        type="button"
+        class="btn-topbar btn-doc"
+        (click)="downloadDoc()"
+        [disabled]="isGeneratingDoc()"
+        title="Download editable Microsoft Word document (.doc)"
+      >
+        @if (isGeneratingDoc()) {
+          <span class="btn-spinner"></span>
+          <span>Exporting DOC...</span>
+        } @else {
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <line x1="10" y1="9" x2="8" y2="9"></line>
+          </svg>
+          <span>Print in DOC</span>
+        }
+      </button>
+
+      <!-- Direct Browser Print Button -->
+      <button
+        type="button"
+        class="btn-topbar btn-print"
+        (click)="printResume()"
+        title="Print document directly using browser printer"
+      >
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polyline points="6 9 6 2 18 2 18 9"></polyline>
           <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
           <rect x="6" y="14" width="12" height="8"></rect>
         </svg>
-        <span>Print / Save PDF</span>
+        <span>Print</span>
       </button>
 
       @if (isAuthenticated()) {
@@ -44,7 +95,7 @@
 
 <!-- Main Resume Paper Container -->
 <div class="resume-wrapper">
-  <main class="resume-page" role="document">
+  <main #resumeDoc class="resume-page" role="document">
     <!-- Header / Contact Information -->
     <header class="resume-header">
       <div class="header-name-wrap">
@@ -474,4 +525,60 @@
       </section>
     }
   </main>
+
+  <!-- Bottom Resume Export & Print Bar (Hidden during Print) -->
+  <footer class="resume-footer-bar">
+    <div class="footer-bar-inner">
+      <div class="footer-info">
+        <span class="footer-icon">📄</span>
+        <div>
+          <div class="footer-headline">Looking for a copy for review or application?</div>
+          <div class="footer-subtext">Direct download formatted for ATS parsers & hiring managers</div>
+        </div>
+      </div>
+      <div class="footer-action-buttons">
+        <button
+          type="button"
+          class="btn-footer btn-footer-pdf"
+          (click)="downloadPdf()"
+          [disabled]="isGeneratingPdf()"
+          title="Download structured ATS-compliant PDF"
+        >
+          @if (isGeneratingPdf()) {
+            <span class="btn-spinner"></span>
+            <span>Generating PDF...</span>
+          } @else {
+            <span class="btn-icon">📥</span>
+            <span>Download PDF</span>
+          }
+        </button>
+
+        <button
+          type="button"
+          class="btn-footer btn-footer-doc"
+          (click)="downloadDoc()"
+          [disabled]="isGeneratingDoc()"
+          title="Download editable Microsoft Word document (.doc)"
+        >
+          @if (isGeneratingDoc()) {
+            <span class="btn-spinner"></span>
+            <span>Exporting DOC...</span>
+          } @else {
+            <span class="btn-icon">📝</span>
+            <span>Print in DOC</span>
+          }
+        </button>
+
+        <button
+          type="button"
+          class="btn-footer btn-footer-print"
+          (click)="printResume()"
+          title="Print document directly"
+        >
+          <span class="btn-icon">🖨️</span>
+          <span>Print</span>
+        </button>
+      </div>
+    </div>
+  </footer>
 </div>

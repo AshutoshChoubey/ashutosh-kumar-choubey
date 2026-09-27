@@ -39,7 +39,15 @@
             },
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "allowedCommonJsDependencies": [
+              "html2canvas",
+              "jspdf",
+              "canvg",
+              "rgbcolor",
+              "raf",
+              "core-js"
+            ]
           },
           "configurations": {
             "production": {
@@ -51,8 +59,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "16kB",
-                  "maximumError": "24kB"
+                  "maximumWarning": "24kB",
+                  "maximumError": "32kB"
                 }
               ],
               "outputHashing": "all"

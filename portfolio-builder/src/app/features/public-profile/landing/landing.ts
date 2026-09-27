@@ -1,13 +1,16 @@
 import {
   Component,
+  ElementRef,
   Signal,
   computed,
-  inject
+  inject,
+  viewChild
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ProfileStateService } from '../../../core/services/profile-state.service';
 import { AuthService } from '../../../core/services/auth';
+import { ResumeExportService } from '../../../core/services/resume-export.service';
 import {
   AboutContent,
   CertificationsContent,
@@ -29,6 +32,12 @@ import {
 export class Landing {
   readonly profileState = inject(ProfileStateService);
   readonly authService = inject(AuthService);
+  readonly exportService = inject(ResumeExportService);
+
+  readonly resumeDoc = viewChild<ElementRef<HTMLElement>>('resumeDoc');
+
+  readonly isGeneratingPdf = this.exportService.isGeneratingPdf;
+  readonly isGeneratingDoc = this.exportService.isGeneratingDoc;
 
   // Canonical Signals
   readonly sections: Signal<ProfileSection[]> = computed(() =>
@@ -127,9 +136,37 @@ export class Landing {
     this.authService.logout();
   }
 
+  async downloadPdf(): Promise<void> {
+    const el =
+      this.resumeDoc()?.nativeElement ||
+      (typeof document !== 'undefined'
+        ? (document.querySelector('.resume-page') as HTMLElement)
+        : null);
+    if (!el) return;
+
+    const rawName = this.heroContent().fullName || 'Ashutosh_Kumar_Choubey';
+    const cleanName = rawName.trim().replace(/[^a-zA-Z0-9_-]/g, '_');
+    await this.exportService.downloadPdf(el, `${cleanName}_Resume.pdf`);
+  }
+
+  downloadDoc(): void {
+    const rawName = this.heroContent().fullName || 'Ashutosh_Kumar_Choubey';
+    const cleanName = rawName.trim().replace(/[^a-zA-Z0-9_-]/g, '_');
+    this.exportService.downloadDoc(
+      {
+        hero: this.heroContent(),
+        about: this.aboutContent(),
+        skills: this.skillsContent(),
+        experience: this.experienceContent(),
+        contentCreation: this.contentCreation(),
+        education: this.educationContent(),
+        certifications: this.certificationsContent()
+      },
+      `${cleanName}_Resume.doc`
+    );
+  }
+
   printResume(): void {
-    if (typeof window !== 'undefined') {
-      window.print();
-    }
+    this.exportService.print();
   }
 }
